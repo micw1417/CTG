@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://d7l6pya50rhj"]
 
-[ext_resource type="Script" path="res://scripts/dude.gd" id="1_d0m58"]
+[ext_resource type="Script" path="res://player/dude.gd" id="1_d0m58"]
 [ext_resource type="Texture2D" uid="uid://jo8l5jiplfm5" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_q36qc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q65fr"]
@@ -141,12 +141,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Dude" type="CharacterBody2D"]
+[node name="Dude" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
 script = ExtResource("1_d0m58")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Shape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_q65fr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3713i")
 animation = &"up"

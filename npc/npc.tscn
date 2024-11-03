@@ -47,6 +47,7 @@ autoplay = "idle"
 frame_progress = 0.683614
 
 [node name="InteractionArea" parent="." instance=ExtResource("3_s42wx")]
+action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_2no48")

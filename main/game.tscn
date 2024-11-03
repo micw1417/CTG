@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://bs3m2epdas81e"]
+[gd_scene load_steps=12 format=4 uid="uid://bs3m2epdas81e"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_oq5tf"]
 [ext_resource type="Texture2D" uid="uid://c8h44650gie1g" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="2_x1g6k"]
 [ext_resource type="Texture2D" uid="uid://blnlp7u0a1wge" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Paths.png" id="3_h8ary"]
 [ext_resource type="PackedScene" uid="uid://d7l6pya50rhj" path="res://player/dude.tscn" id="4_py6t6"]
 [ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="5_53yh6"]
+[ext_resource type="PackedScene" uid="uid://bcd0tj1gmiwrs" path="res://chest/chest.tscn" id="6_ngvjv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_oq5tf")
@@ -197,3 +198,6 @@ offset_bottom = -45.0
 theme_override_font_sizes/font_size = 8
 text = "Current Objective: Talk to Chicken!"
 metadata/_edit_use_anchors_ = true
+
+[node name="Chest" parent="." instance=ExtResource("6_ngvjv")]
+position = Vector2(-58, -45)

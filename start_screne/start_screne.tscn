@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7qk1hda3y4ov"]
+
+[ext_resource type="Texture2D" uid="uid://83mnwfioohnd" path="res://start_screne/Screenshot 2024-11-05 124832.png" id="1_d4jo0"]
+[ext_resource type="Script" path="res://start_screne/start_screne.gd" id="1_fblwi"]
+[ext_resource type="Script" path="res://start_screne/button.gd" id="2_0n0wn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vnrcv"]
+texture = ExtResource("1_d4jo0")
+modulate_color = Color(0.566298, 0.566298, 0.566298, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yts8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1bxn"]
+bg_color = Color(0.730216, 0.730216, 0.730216, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgaeo"]
+bg_color = Color(0.481789, 0.481789, 0.481789, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n83da"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fblwi")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_vnrcv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -38.0
+offset_right = 109.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yts8w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f1bxn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bgaeo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n83da")
+text = "Start Game"
+script = ExtResource("2_0n0wn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = 90.0
+offset_right = 48.0
+offset_bottom = 113.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 65
+text = "Lost In TIme
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]

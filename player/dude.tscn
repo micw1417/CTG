@@ -150,4 +150,4 @@ shape = SubResource("CircleShape2D_q65fr")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3713i")
-animation = &"up"
+animation = &"left"

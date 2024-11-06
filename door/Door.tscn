@@ -1,8 +1,85 @@
-[gd_scene load_steps=2 format=3 uid="uid://h28nphwcdau1"]
+[gd_scene load_steps=13 format=3 uid="uid://h28nphwcdau1"]
+
+[ext_resource type="Texture2D" uid="uid://c8jtqnse6srws" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="1_gqhfd"]
+[ext_resource type="Script" path="res://door/door.gd" id="1_oll7k"]
+[ext_resource type="PackedScene" uid="uid://b0xw5fdjot6a3" path="res://interaction/interaction area/interaction_area.tscn" id="3_nay5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_embjs"]
+atlas = ExtResource("1_gqhfd")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0tqx"]
+atlas = ExtResource("1_gqhfd")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uamj"]
+atlas = ExtResource("1_gqhfd")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wdg4"]
+atlas = ExtResource("1_gqhfd")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k71br"]
+atlas = ExtResource("1_gqhfd")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grru1"]
+atlas = ExtResource("1_gqhfd")
+region = Rect2(0, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ia0k6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_embjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0tqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uamj")
+}],
+"loop": false,
+"name": &"close",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wdg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k71br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grru1")
+}],
+"loop": false,
+"name": &"open",
+"speed": 2.0
+}]
 
-[node name="Door" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hur6e"]
+size = Vector2(16, 16)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[sub_resource type="CircleShape2D" id="CircleShape2D_b888m"]
+radius = 14.0
+
+[node name="Door" type="StaticBody2D"]
+script = ExtResource("1_oll7k")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ia0k6")
+animation = &"open"
+frame_progress = 0.91725
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hur6e")
+
+[node name="AnimationTimer" type="Timer" parent="."]
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_nay5t")]
+action_name = "open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_b888m")

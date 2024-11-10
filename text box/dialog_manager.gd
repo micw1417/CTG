@@ -1,6 +1,7 @@
 extends Node
 
 @onready var text_box_scene = preload("res://text box/text_box.tscn")
+@onready var sfx_1: AudioStreamPlayer2D = $SFX1
 
 var dialog_lines: Array[String] = []
 var current_line_index = 0
@@ -29,6 +30,7 @@ func _show_text_box():
 	get_tree().root.add_child(text_box)
 	text_box.global_position = text_box_position
 	text_box.display_text(dialog_lines[current_line_index])
+	sfx_1.play()
 	can_advance_line = false
 	
 func _on_text_box_finished_displaying():
@@ -36,7 +38,7 @@ func _on_text_box_finished_displaying():
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if (
-		event.is_action_pressed("advance_dialog") &&
+		(event.is_action_pressed("advance_dialog") || event.is_action_pressed("interact")) &&
 		is_dialog_active &&
 		can_advance_line
 	):

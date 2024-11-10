@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=4 uid="uid://bs3m2epdas81e"]
+[gd_scene load_steps=22 format=4 uid="uid://bs3m2epdas81e"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_btjsw"]
+[ext_resource type="Script" path="res://main_startingmap/overworld.gd" id="1_tryir"]
 [ext_resource type="Texture2D" uid="uid://c8h44650gie1g" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="2_oyd2j"]
 [ext_resource type="Texture2D" uid="uid://blnlp7u0a1wge" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Paths.png" id="3_acgiq"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="4_gwoi6"]
@@ -9,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="7_dne47"]
 [ext_resource type="PackedScene" uid="uid://bcd0tj1gmiwrs" path="res://chest/chest.tscn" id="8_lx73m"]
 [ext_resource type="PackedScene" uid="uid://h28nphwcdau1" path="res://door/Door.tscn" id="9_52emi"]
+[ext_resource type="AudioStream" uid="uid://bkiu6squtdbcb" path="res://assets/music/Adventure_remaster.mp3" id="10_0sj4v"]
+[ext_resource type="PackedScene" uid="uid://c4n6bibyf6k2q" path="res://main_menu/options/OptionsMenu.tscn" id="12_7nsis"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_btjsw")
@@ -246,6 +249,7 @@ texture = ExtResource("5_ljkmo")
 sources/0 = SubResource("TileSetAtlasSource_1233l")
 
 [node name="Game" type="Node"]
+script = ExtResource("1_tryir")
 
 [node name="Tiles" type="Node" parent="."]
 
@@ -258,7 +262,7 @@ tile_map_data = PackedByteArray("AAD3/wAAAAAGAAIAAAAAAAQAAAAGAAMAAAAGAAEAAAAGAAM
 tile_set = SubResource("TileSet_44vaf")
 
 [node name="Buildings" type="TileMapLayer" parent="Tiles"]
-tile_map_data = PackedByteArray("AAAFAPv/AAAAAAAAAAAFAPz/AAAAAAEAAAAFAP3/AAAAAAIAAAAGAPv/AAABAAAAAAAGAPz/AAABAAEAAAAGAP3/AAABAAIAAAAHAPv/AAABAAAAAAAHAPz/AAABAAEAAAAHAP3/AAABAAIAAAAIAPv/AAABAAAAAAAIAPz/AAABAAEAAAAIAP3/AAABAAIAAAAJAPv/AAABAAAAAAAJAPz/AAABAAEAAAAJAP3/AAABAAIAAAAKAPv/AAACAAAAAAAKAPz/AAACAAEAAAAKAP3/AAACAAIAAAD2//v/AAAAAAAAAAD2//z/AAAAAAEAAAD2//3/AAAAAAIAAAD3//v/AAABAAAAAAD3//z/AAABAAEAAAD3//3/AAABAAIAAAD4//v/AAABAAAAAAD4//z/AAABAAEAAAD4//3/AAABAAIAAAD5//v/AAABAAAAAAD5//z/AAABAAEAAAD5//3/AAABAAIAAAD6//v/AAABAAAAAAD6//z/AAABAAEAAAD6//3/AAABAAIAAAD7//v/AAACAAAAAAD7//z/AAACAAEAAAD7//3/AAACAAIAAAD2/wIAAAAAAAAAAAD2/wMAAAAAAAEAAAD2/wQAAAAAAAIAAAD3/wIAAAABAAAAAAD3/wMAAAABAAEAAAD3/wQAAAABAAIAAAD4/wIAAAABAAAAAAD4/wMAAAABAAEAAAD4/wQAAAABAAIAAAD5/wIAAAABAAAAAAD5/wMAAAABAAEAAAD5/wQAAAABAAIAAAD6/wIAAAABAAAAAAD6/wMAAAABAAEAAAD6/wQAAAABAAIAAAD7/wIAAAACAAAAAAD7/wMAAAACAAEAAAD7/wQAAAACAAIAAAADAAIAAAAAAAAAAAADAAMAAAAAAAEAAAADAAQAAAAAAAIAAAAEAAIAAAABAAAAAAAEAAMAAAABAAEAAAAEAAQAAAABAAIAAAAFAAIAAAABAAAAAAAFAAMAAAABAAEAAAAFAAQAAAABAAIAAAAGAAIAAAABAAAAAAAGAAMAAAABAAEAAAAGAAQAAAABAAIAAAAHAAIAAAABAAAAAAAHAAMAAAABAAEAAAAHAAQAAAABAAIAAAAIAAIAAAACAAAAAAAIAAMAAAACAAEAAAAIAAQAAAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAAFAPv/AAAAAAAAAAAFAPz/AAAAAAEAAAAFAP3/AAAAAAIAAAAGAPv/AAABAAAAAAAGAPz/AAABAAEAAAAGAP3/AAABAAIAAAAHAPv/AAABAAAAAAAHAPz/AAABAAEAAAAHAP3/AAABAAIAAAAIAPv/AAABAAAAAAAIAPz/AAABAAEAAAAIAP3/AAABAAIAAAAJAPv/AAABAAAAAAAJAPz/AAABAAEAAAAJAP3/AAABAAIAAAAKAPv/AAACAAAAAAAKAPz/AAACAAEAAAAKAP3/AAACAAIAAAD2//v/AAAAAAAAAAD2//z/AAAAAAEAAAD2//3/AAAAAAIAAAD3//v/AAABAAAAAAD3//z/AAABAAEAAAD3//3/AAABAAIAAAD4//v/AAABAAAAAAD4//z/AAABAAEAAAD4//3/AAABAAIAAAD5//v/AAABAAAAAAD5//z/AAABAAEAAAD5//3/AAABAAIAAAD6//v/AAABAAAAAAD6//z/AAABAAEAAAD6//3/AAABAAIAAAD7//v/AAACAAAAAAD7//z/AAACAAEAAAD7//3/AAACAAIAAAD2/wIAAAAAAAAAAAD2/wMAAAAAAAEAAAD2/wQAAAAAAAIAAAD3/wIAAAABAAAAAAD3/wMAAAABAAEAAAD3/wQAAAABAAIAAAD4/wIAAAABAAAAAAD4/wMAAAABAAEAAAD4/wQAAAABAAIAAAD5/wIAAAABAAAAAAD5/wMAAAABAAEAAAD5/wQAAAABAAIAAAD6/wIAAAABAAAAAAD6/wMAAAABAAEAAAD6/wQAAAABAAIAAAD7/wIAAAACAAAAAAD7/wMAAAACAAEAAAD7/wQAAAACAAIAAAADAAIAAAAAAAAAAAADAAMAAAAAAAEAAAADAAQAAAAAAAIAAAAEAAQAAAABAAIAAAAFAAIAAAABAAAAAAAFAAMAAAABAAEAAAAFAAQAAAABAAIAAAAGAAIAAAABAAAAAAAGAAMAAAABAAEAAAAGAAQAAAABAAIAAAAHAAIAAAABAAAAAAAHAAMAAAABAAEAAAAHAAQAAAABAAIAAAAIAAIAAAACAAAAAAAIAAMAAAACAAEAAAAIAAQAAAACAAIAAAAEAAMAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_vyrnb")
 
 [node name="Roof" type="TileMapLayer" parent="Tiles"]
@@ -289,4 +293,11 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-58, -45)
 
 [node name="Door" parent="." instance=ExtResource("9_52emi")]
-position = Vector2(-38, 34)
+position = Vector2(72, 40)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0sj4v")
+autoplay = true
+
+[node name="OptionsMenu" parent="." instance=ExtResource("12_7nsis")]
+visible = false

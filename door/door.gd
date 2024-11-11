@@ -19,3 +19,6 @@ func _on_interact():
 		sprite.play("open")
 		open = !open
 		interaction_area.action_name = "close"
+	
+
+	

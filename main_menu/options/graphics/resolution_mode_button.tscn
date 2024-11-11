@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfogce5yxexkh"]
+
+[ext_resource type="PackedScene" uid="uid://b0or0emp3ioi3" path="res://main_menu/options/graphics/display_options_button.tscn" id="1_8q3d2"]
+[ext_resource type="Script" path="res://main_menu/options/graphics/resolution_mode_button.gd" id="2_0pf78"]
+
+[node name="DisplayButton" instance=ExtResource("1_8q3d2")]
+script = ExtResource("2_0pf78")
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Resolution
+(Not available 
+ Full screen)"
+
+[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="on_resolution_selected"]

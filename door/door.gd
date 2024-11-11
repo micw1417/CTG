@@ -15,10 +15,14 @@ func _on_interact():
 		sprite.play("close")
 		open = !open
 		interaction_area.action_name = "open"
+		
 	else:
 		sprite.play("open")
 		open = !open
 		interaction_area.action_name = "close"
+		
+		await get_tree().create_timer(1).timeout
+		get_tree().change_scene_to_file("res://temple1/main.tscn")
 	
 
 	

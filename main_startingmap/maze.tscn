@@ -183,7 +183,7 @@ tile_set = SubResource("TileSet_44vaf")
 [node name="Camera2D" type="Camera2D" parent="Dude"]
 zoom = Vector2(4, 4)
 
-[node name="NPC" parent="." instance=ExtResource("5_nk1dw")]
+[node name="Athena\'s Owl" parent="." instance=ExtResource("5_nk1dw")]
 position = Vector2(121, -2)
 
 [node name="HUD" type="Node" parent="."]

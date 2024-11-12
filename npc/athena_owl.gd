@@ -4,8 +4,7 @@ extends RigidBody2D
 @onready var sprite: AnimatedSprite2D = $Sprite
 
 var lines: Array[String] = [
-	"Welcome to Ancient Greece",
-	"For the first temple, go left"
+	"Congratulations",
 ]
 func _process(delta: float) -> void:
 	pass
@@ -15,4 +14,5 @@ func _ready() -> void:
 	sprite.play("idle")
 func _on_interact():
 	DialogManager.start_dialog(global_position, lines)
-	
+	await DialogManager.dialog_finished
+	get_tree().change_scene_to_file("res://main_startingmap/overworld.tscn")

@@ -22,7 +22,7 @@ func _on_interact():
 		interaction_area.action_name = "close"
 		
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://temples/temple1.tscn")
+		get_tree().change_scene_to_file("res://temples/temple2.tscn")
 	
 
 	

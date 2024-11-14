@@ -8,7 +8,6 @@ var interacted_with = false
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
-	print(global_position)
 
 func _on_interact():
 	if interacted_with:

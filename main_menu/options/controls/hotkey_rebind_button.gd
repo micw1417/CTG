@@ -61,7 +61,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 
 func rebind_action_key(event):
-	print("WAT")
 	var is_duplicate = false
 	var action_event = event
 	var action_keycode = OS.get_keycode_string(action_event.physical_keycode)

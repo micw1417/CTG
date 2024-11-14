@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Game"
+config/name="Lost In Time"
+config/description="Our change the game... game! Credits: people "
 run/main_scene="res://main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -19,11 +20,12 @@ config/icon="res://icon.svg"
 
 InteractionManager="*res://interaction/InteractionManager.tscn"
 DialogManager="*res://text box/DialogManager.tscn"
+Pause="*res://pause/pause.tscn"
 
 [display]
 
-window/size/viewport_width=1366
-window/size/viewport_height=786
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/mode=4
 window/size/window_width_override=1920
 window/size/window_height_override=1080
@@ -64,6 +66,11 @@ interact={
 advance_dialog={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+]
+}
+pause={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

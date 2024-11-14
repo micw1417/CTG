@@ -34,6 +34,5 @@ func centre_window():
 
 func select_current_display_resolution():
 	var current_resolution = DisplayServer.window_get_size()
-	print(current_resolution)
 	var index = DISPLAY_RESOLUTION_VALUES.find(current_resolution)
 	option_button.select(index)

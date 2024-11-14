@@ -1,12 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://d38tydppery4e"]
 
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_6c4px"]
+[ext_resource type="Texture2D" uid="uid://ddpls48dge8a4" path="res://assets/Our/Screenshot 2024-11-05 124832.png" id="2_c32p8"]
 [ext_resource type="FontFile" uid="uid://dih6a1cra53ey" path="res://assets/Brackey's Assets/fonts/PixelOperator8-Bold.ttf" id="2_sb2qc"]
 [ext_resource type="PackedScene" uid="uid://c4n6bibyf6k2q" path="res://main_menu/options/OptionsMenu.tscn" id="3_yvees"]
 [ext_resource type="AudioStream" uid="uid://bdjecvub8as0y" path="res://assets/music/Fantasy_Ambience.mp3" id="4_2b84i"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_88m02"]
-load_path = "res://.godot/imported/Screenshot 2024-11-05 124832.png-68573fc0ce17700e4b89d978dec5faef.ctex"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sjsmu"]
 
@@ -53,7 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CompressedTexture2D_88m02")
+texture = ExtResource("2_c32p8")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

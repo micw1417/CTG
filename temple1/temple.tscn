@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://hgh6jwkgspb2"]
 
-[ext_resource type="Texture2D" uid="uid://dj4xbt7xrrtal" path="res://assets/Our/Screenshot 2024-11-04 103930.png" id="2_yg4cp"]
+[ext_resource type="Texture2D" uid="uid://dj4xbt7xrrtal" path="res://game/Screenshot 2024-11-04 103930.png" id="2_yg4cp"]
 [ext_resource type="PackedScene" uid="uid://d7l6pya50rhj" path="res://player/dude.tscn" id="3_irqea"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_norjx"]

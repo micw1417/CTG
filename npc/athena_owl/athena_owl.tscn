@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr6j342yrpmfr"]
+
+[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_x28oj"]
+[ext_resource type="Script" path="res://npc/athena_owl/athena_owl.gd" id="2_wjstd"]
+[ext_resource type="Texture2D" uid="uid://cqn00yk15grbx" path="res://assets/Our/athena_owl2.png" id="3_tq7xe"]
+[ext_resource type="Texture2D" uid="uid://dq0cbrc2ics3c" path="res://assets/Our/athena_owl.png" id="4_cf6pl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbaat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tq7xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cf6pl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Athena_Owl" instance=ExtResource("1_x28oj")]
+script = ExtResource("2_wjstd")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_hbaat")
+animation = &"idle"
+autoplay = ""

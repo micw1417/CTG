@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://b56y3s3ebrs7a"]
+
+[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_yguu6"]
+[ext_resource type="Texture2D" uid="uid://dlmt477ab6rvc" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="2_1exqx"]
+[ext_resource type="Script" path="res://npc/chicken/chicken.gd" id="2_trin8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxt4o"]
+atlas = ExtResource("2_1exqx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwes0"]
+atlas = ExtResource("2_1exqx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5n0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxt4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwes0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Chicken" instance=ExtResource("1_yguu6")]
+script = ExtResource("2_trin8")
+
+[node name="Shape" parent="." index="0"]
+position = Vector2(-1.5, 0.5)
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_v5n0l")
+animation = &"default"
+autoplay = ""
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0"]
+position = Vector2(-2, 1)

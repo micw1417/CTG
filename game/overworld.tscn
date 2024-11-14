@@ -1,13 +1,13 @@
 [gd_scene load_steps=23 format=4 uid="uid://bs3m2epdas81e"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_btjsw"]
-[ext_resource type="Script" path="res://main_startingmap/overworld.gd" id="1_tryir"]
+[ext_resource type="Script" path="res://game/overworld.gd" id="1_tryir"]
 [ext_resource type="Texture2D" uid="uid://c8h44650gie1g" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Grass_Biom_things.png" id="2_oyd2j"]
 [ext_resource type="Texture2D" uid="uid://blnlp7u0a1wge" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Paths.png" id="3_acgiq"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="4_gwoi6"]
 [ext_resource type="Texture2D" uid="uid://cjqn7bkkk3mup" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Wooden_House_Roof_Tilset.png" id="5_ljkmo"]
 [ext_resource type="PackedScene" uid="uid://d7l6pya50rhj" path="res://player/dude.tscn" id="6_w1h2s"]
-[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="7_dne47"]
+[ext_resource type="PackedScene" uid="uid://b56y3s3ebrs7a" path="res://npc/chicken/chicken.tscn" id="8_hg27m"]
 [ext_resource type="PackedScene" uid="uid://bcd0tj1gmiwrs" path="res://chest/chest.tscn" id="8_lx73m"]
 [ext_resource type="PackedScene" uid="uid://h28nphwcdau1" path="res://door/Door.tscn" id="9_52emi"]
 [ext_resource type="AudioStream" uid="uid://bkiu6squtdbcb" path="res://assets/music/Adventure_remaster.mp3" id="10_0sj4v"]
@@ -292,7 +292,7 @@ tile_set = SubResource("TileSet_ulma8")
 [node name="Camera2D" type="Camera2D" parent="Dude"]
 zoom = Vector2(4, 4)
 
-[node name="NPC" parent="." instance=ExtResource("7_dne47")]
+[node name="Chicken" parent="." instance=ExtResource("8_hg27m")]
 position = Vector2(-25, 1)
 
 [node name="HUD" type="Node" parent="."]

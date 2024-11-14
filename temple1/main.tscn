@@ -1,12 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://bacnohg2vpmw4"]
+[gd_scene load_steps=12 format=4 uid="uid://bacnohg2vpmw4"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_udtbb"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="2_v7ocx"]
 [ext_resource type="Texture2D" uid="uid://b2qnstaodljp5" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="3_cn1yi"]
 [ext_resource type="PackedScene" uid="uid://d7l6pya50rhj" path="res://player/dude.tscn" id="4_lpugn"]
 [ext_resource type="Texture2D" uid="uid://wnoygitwedkk" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="4_nto7u"]
-[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="5_wpyg0"]
-[ext_resource type="Script" path="res://npc/athena_owl.gd" id="7_xop8y"]
+[ext_resource type="PackedScene" uid="uid://cr6j342yrpmfr" path="res://npc/athena_owl/athena_owl.tscn" id="6_x0fb4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_udtbb")
@@ -1514,6 +1513,5 @@ theme_override_font_sizes/font_size = 8
 text = "Current Objective: Talk to Chicken!"
 metadata/_edit_use_anchors_ = true
 
-[node name="Athena\'s Owl" parent="." instance=ExtResource("5_wpyg0")]
-position = Vector2(-197, 117)
-script = ExtResource("7_xop8y")
+[node name="Athena_Owl" parent="." instance=ExtResource("6_x0fb4")]
+position = Vector2(-194, 113)

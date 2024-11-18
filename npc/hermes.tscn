@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://208hq2sjimel"]
+
+[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_7e2i7"]
+[ext_resource type="Script" path="res://npc/hermes.gd" id="2_clsk8"]
+[ext_resource type="Texture2D" uid="uid://diwl68l3t8pvx" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_emo4k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr8nc"]
+atlas = ExtResource("2_emo4k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co2vq"]
+atlas = ExtResource("2_emo4k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77h4t"]
+atlas = ExtResource("2_emo4k")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0glf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr8nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co2vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77h4t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Hermes" instance=ExtResource("1_7e2i7")]
+script = ExtResource("2_clsk8")
+
+[node name="Shape" parent="." index="0"]
+position = Vector2(0.5, 3.5)
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_p0glf")
+animation = &"default"
+autoplay = ""
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0"]
+position = Vector2(0, 3)

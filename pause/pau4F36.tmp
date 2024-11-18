@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0lfj2jc1n0jy"]
+[gd_scene load_steps=10 format=3 uid="uid://c0lfj2jc1n0jy"]
 
 [ext_resource type="Script" path="res://pause/pause.gd" id="1_fyy51"]
+[ext_resource type="Texture2D" uid="uid://ddpls48dge8a4" path="res://assets/Our/Screenshot 2024-11-05 124832.png" id="2_in57m"]
 [ext_resource type="FontFile" uid="uid://dih6a1cra53ey" path="res://assets/Brackey's Assets/fonts/PixelOperator8-Bold.ttf" id="3_ocxwc"]
 [ext_resource type="PackedScene" uid="uid://c4n6bibyf6k2q" path="res://main_menu/options/OptionsMenu.tscn" id="4_d4f7h"]
 [ext_resource type="AudioStream" uid="uid://bdjecvub8as0y" path="res://assets/music/Fantasy_Ambience.mp3" id="5_yx7tj"]
@@ -34,18 +35,27 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
-[node name="Pause" type="CanvasLayer"]
-script = ExtResource("1_fyy51")
-
-[node name="Control" type="Control" parent="."]
+[node name="Pause" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_fyy51")
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_in57m")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,11 +67,11 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -74,19 +84,19 @@ text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Seperator" type="Control" parent="Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="StartButton" type="Button" parent="Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -102,10 +112,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ujs7b")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqk8h")
 text = "Resume"
 
-[node name="Seperator2" type="Control" parent="Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="OptionButton" type="Button" parent="Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="OptionButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -122,10 +132,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jqk8h")
 text = "Options
 "
 
-[node name="Seperator3" type="Control" parent="Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="MainMenuButton" type="Button" parent="Control/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -141,7 +151,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ujs7b")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jqk8h")
 text = "Main Menu"
 
-[node name="OptionsMenu" parent="Control" instance=ExtResource("4_d4f7h")]
+[node name="OptionsMenu" parent="." instance=ExtResource("4_d4f7h")]
 visible = false
 layout_mode = 1
 
@@ -150,7 +160,8 @@ stream = ExtResource("5_yx7tj")
 volume_db = -10.0
 autoplay = true
 
-[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_pressed"]
-[connection signal="exit_options_menu" from="Control/OptionsMenu" to="." method="_on_exit_options_menu"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MainMenuButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_pressed"]
+[connection signal="exit_options_menu" from="OptionsMenu" to="." method="_on_exit_options_menu"]

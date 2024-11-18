@@ -20,7 +20,7 @@ config/icon="res://icon.svg"
 
 InteractionManager="*res://interaction/InteractionManager.tscn"
 DialogManager="*res://text box/DialogManager.tscn"
-Pause="*res://pause/pause.tscn"
+PauseManager="res://pause/pause_manager.gd"
 
 [display]
 

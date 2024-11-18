@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dicbm12jahpr"]
+
+[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_1wc4k"]
+[ext_resource type="Script" path="res://npc/athena/athena.gd" id="2_sxxda"]
+[ext_resource type="Texture2D" uid="uid://c71vs3fycdp1t" path="res://assets/Our/athena2.png" id="3_bpsm4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yvmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bpsm4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mfngl"]
+
+[node name="Athena" instance=ExtResource("1_1wc4k")]
+collision_mask = 2
+script = ExtResource("2_sxxda")
+
+[node name="Shape" parent="." index="0"]
+position = Vector2(1.49999, 5)
+scale = Vector2(1.12562, -0.981431)
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2(1.5, 1.162)
+sprite_frames = SubResource("SpriteFrames_3yvmd")
+animation = &"default"
+autoplay = ""
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0"]
+scale = Vector2(1.68919, 1.68919)
+shape = SubResource("CapsuleShape2D_mfngl")

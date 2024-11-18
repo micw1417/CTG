@@ -1,21 +1,22 @@
 extends RigidBody2D
 
-
-@onready var sprite: AnimatedSprite2D = $Sprite
 @onready var interaction_area: InteractionArea = $InteractionArea
+@onready var sprite: AnimatedSprite2D = $Sprite
+
+
 
 var lines: Array[String] = [
-	"Yipee you found somethings"
+	"To gain Wisdon's favor...",
+	"find my owl",
+	"Explore this maze...",
+	"Go Venture forth!"
 ]
-var interacted_with = false
+func _process(delta: float) -> void:
+	pass
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
-
+	#sprite.play("idle")
 func _on_interact():
-	if interacted_with:
-		return
-	sprite.play("horizontal")
 	DialogManager.start_dialog(global_position, lines)
-	interaction_area.queue_free()
-	interacted_with = true
+	

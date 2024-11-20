@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv3r26xy7w0e8"]
+
+[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_hse55"]
+[ext_resource type="Texture2D" uid="uid://dq0cbrc2ics3c" path="res://assets/Our/athena_owl.png" id="2_eearf"]
+[ext_resource type="Texture2D" uid="uid://cqn00yk15grbx" path="res://assets/Our/athena_owl2.png" id="3_gr1oj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5psn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eearf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gr1oj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="NPC" instance=ExtResource("1_hse55")]
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_q5psn")
+animation = &"default"
+autoplay = ""

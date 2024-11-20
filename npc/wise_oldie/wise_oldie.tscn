@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6nwbdll3imwa"]
+
+[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_il1sf"]
+[ext_resource type="Texture2D" uid="uid://rm0b4xcok4wi" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Egg_And_Nest.png" id="2_3xy2l"]
+[ext_resource type="Script" path="res://npc/wise_oldie/wise_oldie.gd" id="2_ics8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31d4g"]
+size = Vector2(12, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfxp7"]
+atlas = ExtResource("2_3xy2l")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rl34b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfxp7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y6cw8"]
+radius = 12.0416
+
+[node name="WiseOldie" instance=ExtResource("1_il1sf")]
+script = ExtResource("2_ics8w")
+
+[node name="Shape" parent="." index="0"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_31d4g")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_rl34b")
+animation = &"default"
+autoplay = ""
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0"]
+shape = SubResource("CircleShape2D_y6cw8")

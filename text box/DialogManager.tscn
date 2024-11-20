@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b202jly0l8olk"]
 
-[ext_resource type="Script" path="res://text box/dialog_manager.gd" id="1_68pmn"]
+[ext_resource type="Script" path="res://interaction/dialog_manager.gd" id="1_68pmn"]
 [ext_resource type="AudioStream" uid="uid://dki1ta65dt2v6" path="res://assets/SFX/Alan's_Dalcastagne_SFX/Retro_03/Retro_Multiple_v3_wav.wav" id="2_nnvir"]
 [ext_resource type="AudioStream" uid="uid://b5sb6bh8eboqq" path="res://assets/SFX/Alan's_Dalcastagne_SFX/Retro_03/Retro_Multiple_v4_wav.wav" id="3_bye0q"]
 

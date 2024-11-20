@@ -6,7 +6,8 @@ extends RigidBody2D
 
 
 var lines: Array[String] = [
-	"To stop Zeus and Poseidon from fighting",
+	"To stop Zeus and",
+	"Poseidon from fighting",
 	"Help pick some words to calm them down!",
 	"Enter the temple and go to the left!"
 ]

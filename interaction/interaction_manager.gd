@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var player = get_tree().get_first_node_in_group('player')
+@onready var player = get_tree().get_first_node_in_group("player")
 @onready var label: Label = $Label
 
 const base_text = "[E] to "
@@ -29,8 +29,14 @@ func _process(delta: float) -> void:
 		label.hide()
 		
 func _sort_by_distance_to_player(area1, area2):
-	var area1_to_player = player.global_position.distance_squared_to(area1.global_positon)
-	var area2_to_player = player.global_position.distance_squared_to(area2.global_positon)
+	if not area1 or not area2:
+		return false
+	player = get_tree().get_first_node_in_group('player')
+	if not area1.has_method("get_global_position") or not area2.has_method("get_global_position"):
+		return false
+		
+	var area1_to_player = player.global_position.distance_squared_to(area1.global_position)
+	var area2_to_player = player.global_position.distance_squared_to(area2.global_position)
 	return area1_to_player < area2_to_player
 
 func _input(event: InputEvent) -> void:

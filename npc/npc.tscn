@@ -1,20 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c87qerwkidv2y"]
+[gd_scene load_steps=3 format=3 uid="uid://c87qerwkidv2y"]
 
 [ext_resource type="Script" path="res://npc/npc.gd" id="1_vbopa"]
 [ext_resource type="PackedScene" uid="uid://b0xw5fdjot6a3" path="res://interaction/interaction area/interaction_area.tscn" id="3_s42wx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkvjd"]
-size = Vector2(11, 9)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_2no48"]
-radius = 15.0333
 
 [node name="NPC" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_vbopa")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_fkvjd")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.997855, 0.772557)
@@ -25,4 +18,3 @@ autoplay = "idle"
 action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-shape = SubResource("CircleShape2D_2no48")

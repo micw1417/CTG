@@ -5,7 +5,7 @@ class_name TextBox
 @onready var label: Label = $MarginContainer/Label
 
 
-const max_width = 256
+const max_width = 200
 
 var text = ""
 var letter_index = 0
@@ -26,10 +26,10 @@ func display_text(text_to_display: String):
 	if size.x > max_width:
 		label.autowrap_mode = TextServer.AUTOWRAP_WORD
 		await resized # wait for x resize?? 
-		await resized # wait for y resize?? 
+		#await resized # wait for y resize?? 
 		custom_minimum_size.y = size.y
 
-	global_position.x -= size.x /2
+	global_position.x -= size.x / 2
 	global_position.y -= (size.y + 24) * scale.y
 	
 	label.text = ""

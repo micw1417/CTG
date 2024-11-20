@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bacnohg2vpmw4"]
+[gd_scene load_steps=14 format=4 uid="uid://bacnohg2vpmw4"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_i50xv"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="2_4jekr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d7l6pya50rhj" path="res://player/dude.tscn" id="5_3aixa"]
 [ext_resource type="PackedScene" uid="uid://cr6j342yrpmfr" path="res://npc/athena_owl/athena_owl.tscn" id="6_lv4to"]
 [ext_resource type="PackedScene" uid="uid://dicbm12jahpr" path="res://npc/athena/athena.tscn" id="7_n51bl"]
+[ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/pause.tscn" id="8_myrro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_i50xv")
@@ -1520,3 +1521,5 @@ scale = Vector2(0.999148, 1.00172)
 
 [node name="Athena" parent="." instance=ExtResource("7_n51bl")]
 position = Vector2(64, -162)
+
+[node name="Pause" parent="." instance=ExtResource("8_myrro")]

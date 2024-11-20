@@ -1,48 +1,56 @@
-[gd_scene load_steps=8 format=3 uid="uid://208hq2sjimel"]
+[gd_scene load_steps=10 format=3 uid="uid://bqslm5mquxf5b"]
 
 [ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_7e2i7"]
-[ext_resource type="Script" path="res://npc/hermes.gd" id="2_clsk8"]
+[ext_resource type="Script" path="res://npc/hermes/hermes.gd" id="2_clsk8"]
 [ext_resource type="Texture2D" uid="uid://diwl68l3t8pvx" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_emo4k"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pr8nc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urf2d"]
+size = Vector2(27, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyddk"]
 atlas = ExtResource("2_emo4k")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_co2vq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7r17j"]
 atlas = ExtResource("2_emo4k")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_77h4t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivto4"]
 atlas = ExtResource("2_emo4k")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p0glf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3qyf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pr8nc")
+"texture": SubResource("AtlasTexture_nyddk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_co2vq")
+"texture": SubResource("AtlasTexture_7r17j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_77h4t")
+"texture": SubResource("AtlasTexture_ivto4")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_strli"]
+radius = 19.0263
+
 [node name="Hermes" instance=ExtResource("1_7e2i7")]
 script = ExtResource("2_clsk8")
 
 [node name="Shape" parent="." index="0"]
-position = Vector2(0.5, 3.5)
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_urf2d")
 
 [node name="Sprite" parent="." index="1"]
-sprite_frames = SubResource("SpriteFrames_p0glf")
+sprite_frames = SubResource("SpriteFrames_d3qyf")
 animation = &"default"
 autoplay = ""
 
 [node name="CollisionShape2D" parent="InteractionArea" index="0"]
 position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_strli")

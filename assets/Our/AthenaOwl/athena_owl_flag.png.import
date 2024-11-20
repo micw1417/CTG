@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcnaj85p5xapq"
-path="res://.godot/imported/athena.png-f0a80c6eeebf43ec3a23d569a8ea2bf0.ctex"
+uid="uid://dohx56mevgb5i"
+path="res://.godot/imported/athena_owl_flag.png-520f4800f807cba68d2dcb8fc09cbae6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/athena.png"
-dest_files=["res://.godot/imported/athena.png-f0a80c6eeebf43ec3a23d569a8ea2bf0.ctex"]
+source_file="res://assets/Our/AthenaOwl/athena_owl_flag.png"
+dest_files=["res://.godot/imported/athena_owl_flag.png-520f4800f807cba68d2dcb8fc09cbae6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brht6yuj4cffm"
-path="res://.godot/imported/aphrodite.png-48f7045577adf42d0082481a3a0fb731.ctex"
+uid="uid://dkyr8k0scorgx"
+path="res://.godot/imported/zeus1.png-6e7960dbd501ca46d00b8a01f93b5acf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/aphrodite.png"
-dest_files=["res://.godot/imported/aphrodite.png-48f7045577adf42d0082481a3a0fb731.ctex"]
+source_file="res://assets/Our/Zeus/zeus1.png"
+dest_files=["res://.godot/imported/zeus1.png-6e7960dbd501ca46d00b8a01f93b5acf.ctex"]
 
 [params]
 

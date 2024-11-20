@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj4xbt7xrrtal"
-path="res://.godot/imported/Screenshot 2024-11-04 103930.png-4cfd23305c77c5f10ed0016384218ed7.ctex"
+uid="uid://brht6yuj4cffm"
+path="res://.godot/imported/aphrodite.png-a7e7f885097f27c2925271e7f6368ed9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/Screenshot 2024-11-04 103930.png"
-dest_files=["res://.godot/imported/Screenshot 2024-11-04 103930.png-4cfd23305c77c5f10ed0016384218ed7.ctex"]
+source_file="res://assets/Our/Aphrodite/aphrodite.png"
+dest_files=["res://.godot/imported/aphrodite.png-a7e7f885097f27c2925271e7f6368ed9.ctex"]
 
 [params]
 

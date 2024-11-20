@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq0cbrc2ics3c"
-path="res://.godot/imported/athena_owl.png-141b903ec84a61798dd3ac3f976e36e0.ctex"
+uid="uid://blxldyyoqi1en"
+path="res://.godot/imported/hades2.png-f486c7fe03c77550cb148114ca4f3ed0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/athena_owl.png"
-dest_files=["res://.godot/imported/athena_owl.png-141b903ec84a61798dd3ac3f976e36e0.ctex"]
+source_file="res://assets/Our/Hades/hades2.png"
+dest_files=["res://.godot/imported/hades2.png-f486c7fe03c77550cb148114ca4f3ed0.ctex"]
 
 [params]
 

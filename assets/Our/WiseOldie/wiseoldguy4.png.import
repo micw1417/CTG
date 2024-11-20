@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkyr8k0scorgx"
-path="res://.godot/imported/zeus1.png-a68d45d852fd667dbdf47893bf0469d6.ctex"
+uid="uid://2qardyqicmta"
+path="res://.godot/imported/wiseoldguy4.png-81045375b98e1131ad4ddcfce83435d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/zeus1.png"
-dest_files=["res://.godot/imported/zeus1.png-a68d45d852fd667dbdf47893bf0469d6.ctex"]
+source_file="res://assets/Our/WiseOldie/wiseoldguy4.png"
+dest_files=["res://.godot/imported/wiseoldguy4.png-81045375b98e1131ad4ddcfce83435d3.ctex"]
 
 [params]
 

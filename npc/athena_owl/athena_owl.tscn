@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_x28oj"]
 [ext_resource type="Script" path="res://npc/athena_owl/athena_owl.gd" id="2_wjstd"]
-[ext_resource type="Texture2D" uid="uid://cqn00yk15grbx" path="res://assets/Our/athena_owl2.png" id="3_tq7xe"]
-[ext_resource type="Texture2D" uid="uid://dq0cbrc2ics3c" path="res://assets/Our/athena_owl.png" id="4_cf6pl"]
+[ext_resource type="Texture2D" uid="uid://cqn00yk15grbx" path="res://assets/Our/AthenaOwl/athena_owl2.png" id="3_tq7xe"]
+[ext_resource type="Texture2D" uid="uid://dq0cbrc2ics3c" path="res://assets/Our/AthenaOwl/athena_owl.png" id="4_cf6pl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f81ku"]
 size = Vector2(19, 16)

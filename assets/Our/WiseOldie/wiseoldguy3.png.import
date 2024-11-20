@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqn00yk15grbx"
-path="res://.godot/imported/athena_owl2.png-c07e6307b6131f0ccd34d5385eb41e89.ctex"
+uid="uid://c4bxhtd850wwc"
+path="res://.godot/imported/wiseoldguy3.png-0e8bbcd54e7081522618e2d35874b910.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/athena_owl2.png"
-dest_files=["res://.godot/imported/athena_owl2.png-c07e6307b6131f0ccd34d5385eb41e89.ctex"]
+source_file="res://assets/Our/WiseOldie/wiseoldguy3.png"
+dest_files=["res://.godot/imported/wiseoldguy3.png-0e8bbcd54e7081522618e2d35874b910.ctex"]
 
 [params]
 

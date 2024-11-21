@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d7l6pya50rhj" path="res://player/dude.tscn" id="5_3aixa"]
 [ext_resource type="PackedScene" uid="uid://cr6j342yrpmfr" path="res://npc/athena_owl/athena_owl.tscn" id="6_lv4to"]
 [ext_resource type="PackedScene" uid="uid://dicbm12jahpr" path="res://npc/athena/athena.tscn" id="7_n51bl"]
-[ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/Pause.tscn" id="8_myrro"]
+[ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/pause.tscn" id="8_myrro"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_i50xv")

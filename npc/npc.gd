@@ -6,7 +6,8 @@ extends RigidBody2D
 
 
 var lines: Array[String] = [
-	"Example Dialog"
+	"Welcome to my temple"
+	
 ]
 func _process(delta: float) -> void:
 	pass
@@ -16,4 +17,6 @@ func _ready() -> void:
 	#sprite.play("idle")
 func _on_interact():
 	DialogManager.start_dialog(global_position, lines)
+	
+	
 	

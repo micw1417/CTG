@@ -4,7 +4,6 @@ extends RigidBody2D
 @onready var sprite: AnimatedSprite2D = $Sprite
 
 
-
 var lines: Array[String] = [
 	"HELLO!! I AM HAPY CHICKEN"
 ]

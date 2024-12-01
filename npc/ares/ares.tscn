@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cv3r26xy7w0e8"]
 
 [ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_hse55"]
-[ext_resource type="Texture2D" uid="uid://dohx56mevgb5i" path="res://assets/Our/AthenaOwl/athena_owl_flag.png" id="2_eearf"]
-[ext_resource type="Texture2D" uid="uid://cqn00yk15grbx" path="res://assets/Our/AthenaOwl/athena_owl2.png" id="3_gr1oj"]
+[ext_resource type="Texture2D" path="res://assets/Our/athena_owl.png" id="2_eearf"]
+[ext_resource type="Texture2D" path="res://assets/Our/athena_owl2.png" id="3_gr1oj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_seyto"]
 radius = 9.05539

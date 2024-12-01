@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=4 uid="uid://bpi7fcddm2hel"]
+[gd_scene load_steps=15 format=4 uid="uid://bpi7fcddm2hel"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_ip4f7"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="2_wcyy2"]
 [ext_resource type="Texture2D" uid="uid://b2qnstaodljp5" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="3_72637"]
 [ext_resource type="Texture2D" uid="uid://wnoygitwedkk" path="res://assets/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="4_j554n"]
 [ext_resource type="PackedScene" uid="uid://d7l6pya50rhj" path="res://player/dude.tscn" id="5_7j3oj"]
-[ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/pause.tscn" id="6_aitiy"]
+[ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/Pause.tscn" id="6_aitiy"]
 [ext_resource type="PackedScene" uid="uid://cv3r26xy7w0e8" path="res://npc/ares/ares.tscn" id="7_s72ev"]
+[ext_resource type="PackedScene" uid="uid://130h70h7kim6" path="res://temples/character_body_2d.tscn" id="8_ewb62"]
+[ext_resource type="Script" path="res://temples/character_body_2d.gd" id="9_y5nf0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_ip4f7")
@@ -1513,4 +1515,11 @@ position = Vector2(23, -8)
 zoom = Vector2(4, 4)
 
 [node name="Ares" parent="." instance=ExtResource("7_s72ev")]
-position = Vector2(43, -53)
+light_mask = 2
+collision_layer = 2
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("8_ewb62")]
+light_mask = 2
+position = Vector2(320, -24)
+motion_mode = 1
+script = ExtResource("9_y5nf0")

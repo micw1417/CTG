@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://btf0dwry6pyi6"]
+
+[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_1mx3u"]
+[ext_resource type="Script" path="res://npc/poseidon/poseideon.gd" id="2_apnvw"]
+[ext_resource type="Texture2D" uid="uid://da70a44xf8c17" path="res://assets/Our/Posidon/posidon1.png" id="2_lcmac"]
+[ext_resource type="Texture2D" uid="uid://drtuod2d1at3r" path="res://assets/Our/Posidon/posidon2.png" id="3_3j3lt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j61nq"]
+size = Vector2(19, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nirlh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lcmac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3j3lt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dex45"]
+radius = 20.025
+
+[node name="Poseidon" instance=ExtResource("1_1mx3u")]
+script = ExtResource("2_apnvw")
+
+[node name="Shape" parent="." index="0"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_j61nq")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_nirlh")
+animation = &"idle"
+autoplay = ""
+frame_progress = 0.296598
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0"]
+shape = SubResource("CircleShape2D_dex45")

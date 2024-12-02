@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv3r26xy7w0e8"]
+[gd_scene load_steps=6 format=3 uid="uid://cv3r26xy7w0e8"]
 
 [ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_hse55"]
-[ext_resource type="Texture2D" path="res://assets/Our/athena_owl.png" id="2_eearf"]
-[ext_resource type="Texture2D" path="res://assets/Our/athena_owl2.png" id="3_gr1oj"]
+[ext_resource type="Texture2D" uid="uid://cr0q8x7sd0l4u" path="res://assets/Our/Ares/ares.png" id="2_eearf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_seyto"]
 radius = 9.05539
@@ -12,9 +11,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_eearf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_gr1oj")
 }],
 "loop": true,
 "name": &"default",

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5soj8x21hiis"]
+
+[ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_0fsjk"]
+[ext_resource type="Texture2D" uid="uid://dkyr8k0scorgx" path="res://assets/Our/Zeus/zeus1.png" id="2_7js0a"]
+[ext_resource type="Texture2D" uid="uid://c4kem25xj3qo5" path="res://assets/Our/Zeus/zeus2.png" id="3_qyqfl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ff50y"]
+size = Vector2(17, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g7ved"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7js0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qyqfl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_76eqn"]
+radius = 22.0227
+
+[node name="Zeus" instance=ExtResource("1_0fsjk")]
+
+[node name="Shape" parent="." index="0"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_ff50y")
+
+[node name="Sprite" parent="." index="1"]
+sprite_frames = SubResource("SpriteFrames_g7ved")
+animation = &"idle"
+autoplay = ""
+frame_progress = 0.694397
+
+[node name="CollisionShape2D" parent="InteractionArea" index="0"]
+shape = SubResource("CircleShape2D_76eqn")

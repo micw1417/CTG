@@ -9,7 +9,6 @@ var lines: Array[String] = [
 	"Welcome to my temple"
 	
 ]
-
 func _process(delta: float) -> void:
 	pass
 

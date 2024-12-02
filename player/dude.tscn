@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://d7l6pya50rhj"]
+[gd_scene load_steps=22 format=3 uid="uid://d7l6pya50rhj"]
 
-[ext_resource type="Script" path="res://player/dude.gd" id="1_d0m58"]
+[ext_resource type="Script" path="res://dude.gd" id="1_d0m58"]
 [ext_resource type="Texture2D" uid="uid://jo8l5jiplfm5" path="res://assets/Sprout Lands - Sprites - Basic pack/Basic Charakter Spritesheet.png" id="1_q36qc"]
+[ext_resource type="Texture2D" uid="uid://d0wt6r3ru2foi" path="res://assets/Our/U/coolkid1.png" id="3_8edsb"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q65fr"]
-radius = 8.06226
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueiut"]
+size = Vector2(4, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0o745"]
 atlas = ExtResource("1_q36qc")
@@ -86,7 +87,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_5hmp2")
 }],
 "loop": true,
-"name": &"down",
+"name": &"OLD_D",
 "speed": 5.0
 }, {
 "frames": [{
@@ -103,7 +104,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_o3vvf")
 }],
 "loop": true,
-"name": &"left",
+"name": &"OLD_L",
 "speed": 5.0
 }, {
 "frames": [{
@@ -120,7 +121,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_glp8o")
 }],
 "loop": true,
-"name": &"right",
+"name": &"OLD_R",
 "speed": 5.0
 }, {
 "frames": [{
@@ -137,7 +138,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_hnfxs")
 }],
 "loop": true,
-"name": &"up",
+"name": &"OLD_U",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8edsb")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -146,8 +155,11 @@ collision_layer = 2
 script = ExtResource("1_d0m58")
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_q65fr")
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_ueiut")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(0.78125, 0.78125)
 sprite_frames = SubResource("SpriteFrames_3713i")
-animation = &"left"
+animation = &"idle"

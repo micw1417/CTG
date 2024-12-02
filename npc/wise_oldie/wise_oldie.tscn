@@ -1,21 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6nwbdll3imwa"]
+[gd_scene load_steps=10 format=3 uid="uid://c6nwbdll3imwa"]
 
 [ext_resource type="PackedScene" uid="uid://c87qerwkidv2y" path="res://npc/npc.tscn" id="1_il1sf"]
-[ext_resource type="Texture2D" uid="uid://rm0b4xcok4wi" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Egg_And_Nest.png" id="2_3xy2l"]
 [ext_resource type="Script" path="res://npc/wise_oldie/wise_oldie.gd" id="2_ics8w"]
+[ext_resource type="Texture2D" uid="uid://dyrdilu2ks45w" path="res://assets/Our/WiseOldie/wiseoldguy1.png" id="3_qyl33"]
+[ext_resource type="Texture2D" uid="uid://bwqec56vxjhgg" path="res://assets/Our/WiseOldie/wiseoldguy2.png" id="4_t8868"]
+[ext_resource type="Texture2D" uid="uid://c4bxhtd850wwc" path="res://assets/Our/WiseOldie/wiseoldguy3.png" id="5_oaumn"]
+[ext_resource type="Texture2D" uid="uid://2qardyqicmta" path="res://assets/Our/WiseOldie/wiseoldguy4.png" id="6_qkp6j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_31d4g"]
-size = Vector2(12, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lfxp7"]
-atlas = ExtResource("2_3xy2l")
-region = Rect2(32, 0, 16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_fc6yv"]
+radius = 11.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rl34b"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lfxp7")
+"texture": ExtResource("3_qyl33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t8868")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_oaumn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qkp6j")
 }],
 "loop": true,
 "name": &"default",
@@ -23,14 +31,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6cw8"]
-radius = 12.0416
+radius = 24.0208
 
 [node name="WiseOldie" instance=ExtResource("1_il1sf")]
 script = ExtResource("2_ics8w")
 
 [node name="Shape" parent="." index="0"]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_31d4g")
+shape = SubResource("CircleShape2D_fc6yv")
 
 [node name="Sprite" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_rl34b")

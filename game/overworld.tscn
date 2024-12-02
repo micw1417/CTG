@@ -20,10 +20,7 @@
 [ext_resource type="Script" path="res://door/door3.gd" id="16_362q8"]
 [ext_resource type="PackedScene" uid="uid://c6nwbdll3imwa" path="res://npc/wise_oldie/wise_oldie.tscn" id="18_34vdf"]
 [ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/pause.tscn" id="18_ie0h8"]
-<<<<<<< Updated upstream
-=======
 [ext_resource type="PackedScene" uid="uid://b56y3s3ebrs7a" path="res://npc/chicken/chicken.tscn" id="19_itoky"]
->>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_btjsw")

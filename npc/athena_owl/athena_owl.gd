@@ -16,3 +16,4 @@ func _on_interact():
 	DialogManager.start_dialog(global_position, lines)
 	await DialogManager.dialog_finished
 	get_tree().change_scene_to_file("res://game/overworld.tscn")
+	StateManager.finishedTemple1 = true

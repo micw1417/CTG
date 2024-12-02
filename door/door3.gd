@@ -10,6 +10,9 @@ func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
 
 func _on_interact():
+	if !StateManager.finishedTemple2:
+		DialogManager.start_dialog(global_position, ["Currently Locked...", "Try talking to the mysterious Man."])
+		return
 	if open:
 		sprite.play("close")
 		open = !open

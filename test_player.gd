@@ -1,7 +1,6 @@
 extends RigidBody2D
 
 var speed = 100
-var push_force = 5000
 
 func _physics_process(delta):
 	var move_vector = Vector2()

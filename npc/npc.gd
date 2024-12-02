@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
-	#sprite.play("idle")
+	sprite.play("idle")
 func _on_interact():
 	DialogManager.start_dialog(global_position, lines)
 	

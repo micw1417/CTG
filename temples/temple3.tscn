@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://yn706lmj8bkv"]
+[gd_scene load_steps=23 format=4 uid="uid://yn706lmj8bkv"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_tmjm0"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="2_1sanx"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/Pause.tscn" id="7_ckcfx"]
 [ext_resource type="PackedScene" uid="uid://btf0dwry6pyi6" path="res://npc/poseidon/poseideon.tscn" id="7_rvb3b"]
 [ext_resource type="FontFile" uid="uid://dih6a1cra53ey" path="res://assets/Brackey's Assets/fonts/PixelOperator8-Bold.ttf" id="8_spe4b"]
+[ext_resource type="Script" path="res://temples/insult_word_control.gd" id="10_ghby4"]
 [ext_resource type="PackedScene" uid="uid://c5soj8x21hiis" path="res://npc/zeus/zeus.tscn" id="11_hghsr"]
+[ext_resource type="Script" path="res://npc/zeus/zeus.gd" id="12_es3gm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_tmjm0")
@@ -3687,7 +3689,7 @@ position = Vector2(44, 113)
 
 [node name="InsultWordPicker" type="CanvasLayer" parent="Poseidon"]
 
-[node name="Control" type="Control" parent="Poseidon/InsultWordPicker"]
+[node name="InsultWordControl" type="Control" parent="Poseidon/InsultWordPicker"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -3699,8 +3701,9 @@ offset_bottom = -696.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0598, 1.2511)
+script = ExtResource("10_ghby4")
 
-[node name="Panel" type="Panel" parent="Poseidon/InsultWordPicker/Control"]
+[node name="Panel" type="Panel" parent="Poseidon/InsultWordPicker/InsultWordControl"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3709,7 +3712,7 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="Poseidon/InsultWordPicker/Control/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -3722,11 +3725,11 @@ theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="Title" type="Label" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("8_spe4b")
@@ -3736,22 +3739,21 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="NounLabel" type="Label" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="NounLabel" type="Label" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_spe4b")
 theme_override_font_sizes/font_size = 24
 text = "Noun"
 
-[node name="VSeparator" type="VSeparator" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator" type="VSeparator" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="NounOptions" type="OptionButton" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="NounOptions" type="OptionButton" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-selected = 0
 item_count = 4
 popup/item_0/text = "κόπρος "
 popup/item_1/text = "κίναιδος "
@@ -3762,23 +3764,22 @@ popup/item_2/id = 2
 popup/item_3/text = "κακός "
 popup/item_3/id = 3
 
-[node name="VSeparator3" type="VSeparator" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator3" type="VSeparator" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="TitleLabel" type="Label" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TitleLabel" type="Label" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_spe4b")
 theme_override_font_sizes/font_size = 24
 text = "Title"
 
-[node name="VSeparator2" type="VSeparator" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator2" type="VSeparator" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="TitleOptions" type="OptionButton" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="TitleOptions" type="OptionButton" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-selected = 0
 item_count = 4
 popup/item_0/text = "αμάθης  "
 popup/item_1/text = "βδελυρόδελυρός "
@@ -3789,41 +3790,40 @@ popup/item_2/id = 2
 popup/item_3/text = "ἀχρείος  "
 popup/item_3/id = 3
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VSeparator2" type="VSeparator" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VSeparator2" type="VSeparator" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 200
 
-[node name="VerbLabel" type="Label" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VerbLabel" type="Label" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_spe4b")
 theme_override_font_sizes/font_size = 24
 text = "Verb"
 
-[node name="VSeparator" type="VSeparator" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VSeparator" type="VSeparator" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="VerbOptions" type="OptionButton" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VerbOptions" type="OptionButton" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-selected = 0
 item_count = 2
 popup/item_0/text = "βάλλ' εἰς κόρακας"
 popup/item_1/text = "ἐξόλοιό  "
 popup/item_1/icon = SubResource("ViewportTexture_5lmpb")
 popup/item_1/id = 1
 
-[node name="VSeparator3" type="VSeparator" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="VSeparator3" type="VSeparator" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="ExitButton" type="Button" parent="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer"]
+[node name="ExitButton" type="Button" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_spe4b")
 theme_override_font_sizes/font_size = 32
@@ -3831,5 +3831,9 @@ text = "EXIT"
 
 [node name="Zeus" parent="." instance=ExtResource("11_hghsr")]
 position = Vector2(242, 22)
+script = ExtResource("12_es3gm")
 
-[connection signal="pressed" from="Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/ExitButton" to="Poseidon" method="_on_exit_button_pressed"]
+[connection signal="item_selected" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/NounOptions" to="Poseidon/InsultWordPicker/InsultWordControl" method="_on_noun_options_item_selected"]
+[connection signal="item_selected" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/TitleOptions" to="Poseidon/InsultWordPicker/InsultWordControl" method="_on_title_options_item_selected"]
+[connection signal="item_selected" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2/VerbOptions" to="Poseidon/InsultWordPicker/InsultWordControl" method="_on_verb_options_item_selected"]
+[connection signal="pressed" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/ExitButton" to="Poseidon" method="_on_exit_button_pressed"]

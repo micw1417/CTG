@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd8wenye6od7m"]
+
+[ext_resource type="PackedScene" uid="uid://d7l6pya50rhj" path="res://player/dude.tscn" id="1_b00lx"]
+[ext_resource type="Texture2D" uid="uid://c0fnii103hqyj" path="res://assets/Our/Underworld Backround/SadMicheal.png" id="1_puug1"]
+[ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/Pause.tscn" id="3_atstt"]
+[ext_resource type="Texture2D" uid="uid://c8djecbt1bbgr" path="res://assets/Brackey's Assets/sprites/platforms.png" id="3_oohfl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpap8"]
+texture = ExtResource("3_oohfl")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2cq3p"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_fpap8")
+
+[node name="Underworld" type="Node2D"]
+
+[node name="SadMicheal" type="Sprite2D" parent="."]
+position = Vector2(1, -730)
+scale = Vector2(1, 1.84694)
+texture = ExtResource("1_puug1")
+
+[node name="Dude" parent="." instance=ExtResource("1_b00lx")]
+position = Vector2(99, -24)
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="Dude"]
+position = Vector2(-82, 82)
+zoom = Vector2(3, 3)
+
+[node name="Platforms" type="TileMapLayer" parent="."]
+position = Vector2(-6, 422)
+tile_set = SubResource("TileSet_2cq3p")
+
+[node name="Pause" parent="." instance=ExtResource("3_atstt")]

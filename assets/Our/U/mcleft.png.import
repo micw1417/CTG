@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dacxauwpayg7g"
-path="res://.godot/imported/coolkid1.png-74fdabd038405d5116ae3b582ce54647.ctex"
+uid="uid://d0bbimk35vr1i"
+path="res://.godot/imported/mcleft.png-fc578ade293913fa85c0f57983271316.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/U/coolkid1.png"
-dest_files=["res://.godot/imported/coolkid1.png-74fdabd038405d5116ae3b582ce54647.ctex"]
+source_file="res://assets/Our/U/mcleft.png"
+dest_files=["res://.godot/imported/mcleft.png-fc578ade293913fa85c0f57983271316.ctex"]
 
 [params]
 

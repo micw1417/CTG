@@ -36,7 +36,7 @@ shape = SubResource("RectangleShape2D_j61nq")
 sprite_frames = SubResource("SpriteFrames_nirlh")
 animation = &"idle"
 autoplay = ""
-frame_progress = 0.0289026
+frame_progress = 0.484362
 
 [node name="CollisionShape2D" parent="InteractionArea" index="0"]
 shape = SubResource("CircleShape2D_dex45")

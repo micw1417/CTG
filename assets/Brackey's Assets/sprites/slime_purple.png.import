@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dacxauwpayg7g"
-path="res://.godot/imported/coolkid1.png-74fdabd038405d5116ae3b582ce54647.ctex"
+uid="uid://bvbpcoyy1kx1n"
+path="res://.godot/imported/slime_purple.png-225f88ff253cf99c90659c2d66af5e3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/U/coolkid1.png"
-dest_files=["res://.godot/imported/coolkid1.png-74fdabd038405d5116ae3b582ce54647.ctex"]
+source_file="res://assets/Brackey's Assets/sprites/slime_purple.png"
+dest_files=["res://.godot/imported/slime_purple.png-225f88ff253cf99c90659c2d66af5e3a.ctex"]
 
 [params]
 

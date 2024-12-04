@@ -6,11 +6,16 @@ extends RigidBody2D
 
 
 
-var lines: Array[String] = [
+var startLines: Array[String] = [
 	"Welcome to my temple",
 	"I need you to... help make an apology",
-	"Hermes told you you could help pick some words"
-	
+	"Hermes told you you could help pick some words",
+	"Talk to me again when you finish",
+]
+
+var afterChosenLines: Array[String] = [
+	"Good... Now do me a small favor",
+	"Walk up and present this insult to zeus"
 ]
 func _process(delta: float) -> void:
 	pass
@@ -21,13 +26,19 @@ func _ready() -> void:
 	insult_word_picker.visible = false
 
 func _on_interact():
-	DialogManager.start_dialog(global_position, lines)
+	DialogManager.start_dialog(global_position, get_lines())
+	DialogManager.is_dialog_active = true
 	await DialogManager.dialog_finished
-	insult_word_picker.visible = true;
-	DialogManager.is_dialog_active = true;
-	
+	if (StateManager.chooeseInsult != true):
+		insult_word_picker.visible = true
+		DialogManager.is_dialog_active = false
 
 
 func _on_exit_button_pressed() -> void:
-	insult_word_picker.visible = false;
-	DialogManager.is_dialog_active = false;
+	insult_word_picker.visible = false
+	StateManager.chooeseInsult = true
+	
+func get_lines() -> Array[String]:
+	if StateManager.chooeseInsult == true:
+		return afterChosenLines
+	return startLines

@@ -5,6 +5,9 @@
 [ext_resource type="FontFile" uid="uid://dih6a1cra53ey" path="res://assets/Brackey's Assets/fonts/PixelOperator8-Bold.ttf" id="2_r8kmr"]
 
 [node name="TextBox" type="MarginContainer"]
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_nydnx")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

@@ -3,10 +3,11 @@ extends RigidBody2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite: AnimatedSprite2D = $Sprite
 
-@onready var noun_options: OptionButton = $Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer/NounOptions
-@onready var title_options: OptionButton = $Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer/TitleOptions
-@onready var verb_options: OptionButton = $Poseidon/InsultWordPicker/Control/Panel/MarginContainer/VBoxContainer/HBoxContainer2/VerbOptions
+@onready var noun_options: OptionButton = $"../Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/NounOptions"
+@onready var title_options: OptionButton = $"../Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/TitleOptions"
+@onready var verb_options: OptionButton = $"../Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2/VerbOptions"
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 var startLines: Array[String] = [
@@ -27,15 +28,46 @@ func _ready() -> void:
 
 func _on_interact():
 	DialogManager.start_dialog(global_position, get_lines())
-
-
+	await DialogManager.dialog_finished
 	
-func get_lines() -> Array[String]:
 	if StateManager.chooeseInsult == true:
-		var afterChosenLines: Array[String] = [
-			"Oh you have to present something?",
-			"... WHAT DID YOU JUST SAY TO ME!!",
-			"(The apology was... " + noun_options.get_item_text(noun_options.selected),  
-		]
-		return afterChosenLines
-	return startLines
+		animation_player.play('zeus_smite')
+		
+func get_lines() -> Array[String]:
+	if StateManager.chooeseInsult == false:
+		return startLines
+	
+	var noun = noun_options.get_item_text(noun_options.selected)
+
+	if noun == "κόπρος":
+		noun = "κόπρος (Scum)"
+	elif noun == "κακός":
+		noun = "κακός (Evil Person)"
+	elif noun == "βλάκας":
+		noun = "βλάκας (Idiot)"
+	elif noun == "ζώον":
+		noun = "ζώον (Animal/Brute)"
+	
+	var title = title_options.get_item_text(title_options.selected)
+
+	if title == "αμάθης":
+		title = "αμάθης (Ignorant)"
+	elif title == "βδελυρός":
+		title = "βδελυρός (Hideous)"
+	elif title == "ματαιόδοξος":
+		title = "ματαιόδοξος (Vain)"
+	elif title == "ἄσχετος":
+		title = "ἄσχετος (Irrelevant/Incompetent)"
+		
+	var verb = verb_options.get_item_text(verb_options.selected)
+
+	if verb == "βάλλ' εἰς κόρακας":
+		verb = "βάλλ' εἰς κόρακας (Go to H*ll)!!"
+	elif verb == "ἐξόλοιο":
+		verb = 'ἐξόλοιο (Drop dead)!!'
+	var afterChosenLines: Array[String] = [
+		"Oh you have to present something?",
+		"... WHAT DID YOU JUST SAY TO ME!!",
+		"YOU... YOU DARE CALL ME A " + title + " " + noun + " THAT SHOULD... " + verb,  
+	]
+	return afterChosenLines

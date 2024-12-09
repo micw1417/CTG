@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0fnii103hqyj"
-path="res://.godot/imported/SadMicheal.png-cac45d61aba141aee93f8151c887f18b.ctex"
+uid="uid://b73ywqva8mv87"
+path="res://.godot/imported/lightling_animation.png-d69517fe886d57e2659a7d1545d3dfc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/Underworld Backround/SadMicheal.png"
-dest_files=["res://.godot/imported/SadMicheal.png-cac45d61aba141aee93f8151c887f18b.ctex"]
+source_file="res://assets/Our/LightlingAnimation/lightling_animation.png"
+dest_files=["res://.godot/imported/lightling_animation.png-d69517fe886d57e2659a7d1545d3dfc1.ctex"]
 
 [params]
 

@@ -26,12 +26,14 @@ func _ready() -> void:
 	insult_word_picker.visible = false
 
 func _on_interact():
+	if insult_word_picker.visible == true:
+		return
+	
 	DialogManager.start_dialog(global_position, get_lines())
-	DialogManager.is_dialog_active = true
 	await DialogManager.dialog_finished
+	insult_word_picker.visible = true
 	if (StateManager.chooeseInsult != true):
 		insult_word_picker.visible = true
-		DialogManager.is_dialog_active = false
 
 
 func _on_exit_button_pressed() -> void:

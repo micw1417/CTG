@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://yn706lmj8bkv"]
+[gd_scene load_steps=38 format=4 uid="uid://yn706lmj8bkv"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_tmjm0"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="2_1sanx"]
@@ -10,9 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/Pause.tscn" id="7_ckcfx"]
 [ext_resource type="PackedScene" uid="uid://btf0dwry6pyi6" path="res://npc/poseidon/poseideon.tscn" id="7_rvb3b"]
 [ext_resource type="FontFile" uid="uid://dih6a1cra53ey" path="res://assets/Brackey's Assets/fonts/PixelOperator8-Bold.ttf" id="8_spe4b"]
-[ext_resource type="Script" path="res://temples/insult_word_control.gd" id="10_ghby4"]
+[ext_resource type="Script" path="res://temples/insult_word_control.gd" id="10_k3usk"]
 [ext_resource type="PackedScene" uid="uid://c5soj8x21hiis" path="res://npc/zeus/zeus.tscn" id="11_hghsr"]
 [ext_resource type="Script" path="res://npc/zeus/zeus.gd" id="12_es3gm"]
+[ext_resource type="AudioStream" uid="uid://cidxfg1w2fc3q" path="res://assets/SFX/LightningSFX/lightning-237994.mp3" id="14_tf1s6"]
+[ext_resource type="Texture2D" uid="uid://bkirllikhngpf" path="res://assets/Our/LightlingAnimation/lightling_animation_extra.png" id="15_tgutr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_tmjm0")
@@ -3662,7 +3664,203 @@ texture = ExtResource("6_j0dg3")
 sources/1 = SubResource("TileSetAtlasSource_6lxg3")
 sources/2 = SubResource("TileSetAtlasSource_061uu")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_5lmpb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esyvr"]
+size = Vector2(20, 36)
+
+[sub_resource type="Animation" id="Animation_e0kcq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Zeus/AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Zeus/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Zeus/AnimatedSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Dude:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7aa1e"]
+resource_name = "zeus_smite"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Zeus/AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Zeus/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"LightningStrike"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Zeus/AnimatedSprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4, 1.73333, 2.13333, 2.5, 3.4, 3.7, 4.13333, 4.46667, 5.03333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Zeus/SFX")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.5,
+"stream": ExtResource("14_tf1s6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Dude:process_mode")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6blxo"]
+_data = {
+"RESET": SubResource("Animation_e0kcq"),
+"zeus_smite": SubResource("Animation_7aa1e")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap8a1"]
+atlas = ExtResource("15_tgutr")
+region = Rect2(0, 0, 47, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyrwh"]
+atlas = ExtResource("15_tgutr")
+region = Rect2(47, 0, 47, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfjby"]
+atlas = ExtResource("15_tgutr")
+region = Rect2(94, 0, 47, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snh5h"]
+atlas = ExtResource("15_tgutr")
+region = Rect2(141, 0, 47, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k7kj"]
+atlas = ExtResource("15_tgutr")
+region = Rect2(188, 0, 47, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52fb6"]
+atlas = ExtResource("15_tgutr")
+region = Rect2(235, 0, 47, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv7e3"]
+atlas = ExtResource("15_tgutr")
+region = Rect2(282, 0, 47, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6o3t"]
+atlas = ExtResource("15_tgutr")
+region = Rect2(329, 0, 47, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0uq0"]
+atlas = ExtResource("15_tgutr")
+region = Rect2(376, 0, 47, 164)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wv4qr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap8a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyrwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfjby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snh5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k7kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52fb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv7e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6o3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0uq0")
+}],
+"loop": true,
+"name": &"LightningStrike",
+"speed": 5.0
+}]
 
 [node name="Temple3" type="Node"]
 
@@ -3688,6 +3886,7 @@ visible = false
 position = Vector2(44, 113)
 
 [node name="InsultWordPicker" type="CanvasLayer" parent="Poseidon"]
+unique_name_in_owner = true
 
 [node name="InsultWordControl" type="Control" parent="Poseidon/InsultWordPicker"]
 layout_mode = 3
@@ -3701,13 +3900,15 @@ offset_bottom = -696.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0598, 1.2511)
-script = ExtResource("10_ghby4")
+script = ExtResource("10_k3usk")
 
 [node name="Panel" type="Panel" parent="Poseidon/InsultWordPicker/InsultWordControl"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.0806824
+anchor_top = 0.136176
+anchor_right = 1.08068
+anchor_bottom = 1.13618
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -3755,13 +3956,12 @@ theme_override_constants/separation = 20
 [node name="NounOptions" type="OptionButton" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 item_count = 4
-popup/item_0/text = "κόπρος "
-popup/item_1/text = "κίναιδος "
-popup/item_1/icon = SubResource("ViewportTexture_5lmpb")
+popup/item_0/text = "κόπρος"
+popup/item_1/text = "κακός"
 popup/item_1/id = 1
-popup/item_2/text = "μαστροπός "
+popup/item_2/text = "βλάκας"
 popup/item_2/id = 2
-popup/item_3/text = "κακός "
+popup/item_3/text = "ζώον"
 popup/item_3/id = 3
 
 [node name="VSeparator3" type="VSeparator" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -3781,13 +3981,12 @@ theme_override_constants/separation = 20
 [node name="TitleOptions" type="OptionButton" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 item_count = 4
-popup/item_0/text = "αμάθης  "
-popup/item_1/text = "βδελυρόδελυρός "
-popup/item_1/icon = SubResource("ViewportTexture_5lmpb")
+popup/item_0/text = "αμάθης"
+popup/item_1/text = "βδελυρός"
 popup/item_1/id = 1
-popup/item_2/text = "οινοπίπης  "
+popup/item_2/text = "ματαιόδοξος"
 popup/item_2/id = 2
-popup/item_3/text = "ἀχρείος  "
+popup/item_3/text = "ἄσχετος"
 popup/item_3/id = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer"]
@@ -3815,8 +4014,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 item_count = 2
 popup/item_0/text = "βάλλ' εἰς κόρακας"
-popup/item_1/text = "ἐξόλοιό  "
-popup/item_1/icon = SubResource("ViewportTexture_5lmpb")
+popup/item_1/text = "ἐξόλοιο"
 popup/item_1/id = 1
 
 [node name="VSeparator3" type="VSeparator" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
@@ -3824,6 +4022,7 @@ layout_mode = 2
 theme_override_constants/separation = 100
 
 [node name="ExitButton" type="Button" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_spe4b")
 theme_override_font_sizes/font_size = 32
@@ -3833,7 +4032,26 @@ text = "EXIT"
 position = Vector2(242, 22)
 script = ExtResource("12_es3gm")
 
+[node name="CollisionShape2D" parent="Zeus/InteractionArea" index="0"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_esyvr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Zeus"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_6blxo")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Zeus"]
+visible = false
+position = Vector2(-7, -55)
+sprite_frames = SubResource("SpriteFrames_wv4qr")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="Zeus"]
+
 [connection signal="item_selected" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/NounOptions" to="Poseidon/InsultWordPicker/InsultWordControl" method="_on_noun_options_item_selected"]
 [connection signal="item_selected" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/TitleOptions" to="Poseidon/InsultWordPicker/InsultWordControl" method="_on_title_options_item_selected"]
 [connection signal="item_selected" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2/VerbOptions" to="Poseidon/InsultWordPicker/InsultWordControl" method="_on_verb_options_item_selected"]
 [connection signal="pressed" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/ExitButton" to="Poseidon" method="_on_exit_button_pressed"]
+
+[editable path="Zeus"]

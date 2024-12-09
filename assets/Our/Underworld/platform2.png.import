@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i0871ngpx4ni"
-path="res://.godot/imported/CloudMicheal.png-b37c17a4fc8f131e732c7edf8753393e.ctex"
+uid="uid://dcp51el0e7o43"
+path="res://.godot/imported/platform2.png-39fab969641e008a2abdde3861af200f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Our/Underworld Backround/CloudMicheal.png"
-dest_files=["res://.godot/imported/CloudMicheal.png-b37c17a4fc8f131e732c7edf8753393e.ctex"]
+source_file="res://assets/Our/Underworld/platform2.png"
+dest_files=["res://.godot/imported/platform2.png-39fab969641e008a2abdde3861af200f.ctex"]
 
 [params]
 

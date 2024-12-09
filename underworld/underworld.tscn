@@ -1,46 +1,78 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd8wenye6od7m"]
+[gd_scene load_steps=10 format=4 uid="uid://dd8wenye6od7m"]
 
 [ext_resource type="PackedScene" uid="uid://d7l6pya50rhj" path="res://player/dude.tscn" id="1_b00lx"]
-[ext_resource type="Texture2D" uid="uid://c0fnii103hqyj" path="res://assets/Our/Underworld Backround/SadMicheal.png" id="1_puug1"]
+[ext_resource type="Texture2D" uid="uid://c0fnii103hqyj" path="res://assets/Our/Underworld/SadMicheal.png" id="1_puug1"]
 [ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/Pause.tscn" id="3_atstt"]
-[ext_resource type="Texture2D" uid="uid://c8djecbt1bbgr" path="res://assets/Brackey's Assets/sprites/platforms.png" id="3_oohfl"]
+[ext_resource type="Texture2D" uid="uid://ujv81om5x1bm" path="res://assets/Our/Underworld/underworld_platforms.png" id="3_q4lro"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpap8"]
-texture = ExtResource("3_oohfl")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gnbi3"]
+texture = ExtResource("3_q4lro")
 0:0/0 = 0
-1:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_2cq3p"]
+[sub_resource type="TileSet" id="TileSet_bdyhb"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_fpap8")
+sources/2 = SubResource("TileSetAtlasSource_gnbi3")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_su58g"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ohw8s"]
+distance = -6.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6c852"]
+distance = 3.0
 
 [node name="Underworld" type="Node2D"]
 
 [node name="SadMicheal" type="Sprite2D" parent="."]
-position = Vector2(1, -730)
-scale = Vector2(1, 1.84694)
+position = Vector2(54, -792.499)
+scale = Vector2(1.23043, 1.97449)
 texture = ExtResource("1_puug1")
-
-[node name="Dude" parent="." instance=ExtResource("1_b00lx")]
-position = Vector2(99, -24)
 metadata/_edit_lock_ = true
 
+[node name="Dude" parent="." instance=ExtResource("1_b00lx")]
+position = Vector2(20, -78)
+
 [node name="Camera2D" type="Camera2D" parent="Dude"]
-position = Vector2(-82, 82)
-zoom = Vector2(3, 3)
+position = Vector2(-32, 89)
+zoom = Vector2(3.45, 3.45)
+limit_left = -220
+limit_right = 335
+limit_bottom = 170
+metadata/_edit_lock_ = true
 
 [node name="Platforms" type="TileMapLayer" parent="."]
-position = Vector2(-6, 422)
-tile_set = SubResource("TileSet_2cq3p")
+position = Vector2(-8, 173)
+tile_map_data = PackedByteArray("AAANAOz/AgAKAAAAAAAOAOz/AgAIAAAAAAAPAOz/AgAIAAAAAAAQAOz/AgAKAAAAAAAOAO3/AgAAAAAAAAAPAO3/AgAAAAAAAAAOAOv/AgAEAAAAAAAPAOv/AgAEAAAAAAANAOv/AgAEAAAAAAAQAOv/AgAEAAAAAAANAO3/AgAAAAAAAAAQAO3/AgAAAAAAAAACAOr/AgAEAAAAAAADAOr/AgAEAAAAAAAEAOr/AgAEAAAAAAACAOv/AgAKAAAAAAADAOv/AgAIAAAAAAAEAOv/AgAIAAAAAAAEAOz/AgAAAAAAAAADAOz/AgAAAAAAAAACAOz/AgAAAAAAAAAIAOn/AgAEAAAAAAAJAOn/AgAEAAAAAAAIAOr/AgAIAAAAAAAJAOr/AgAIAAAAAAA=")
+tile_set = SubResource("TileSet_bdyhb")
 
 [node name="Pause" parent="." instance=ExtResource("3_atstt")]
+
+[node name="WorldBorders" type="StaticBody2D" parent="."]
+position = Vector2(14, 7)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorders"]
+position = Vector2(45, -71)
+shape = SubResource("WorldBoundaryShape2D_su58g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorders"]
+position = Vector2(-230, -23)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_ohw8s")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldBorders"]
+position = Vector2(321, -22)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_6c852")

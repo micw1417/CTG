@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3mt3lw0sylel"]
+
+[ext_resource type="Texture2D" uid="uid://dq0cbrc2ics3c" path="res://assets/Our/AthenaOwl/athena_owl.png" id="1_pgw6c"]
+[ext_resource type="Texture2D" uid="uid://cqn00yk15grbx" path="res://assets/Our/AthenaOwl/athena_owl2.png" id="2_0wkyf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svjsc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pgw6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0wkyf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iih6j"]
+radius = 11.0
+height = 22.0
+
+[node name="Enemy" type="RigidBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_svjsc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_iih6j")

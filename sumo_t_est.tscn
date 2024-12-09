@@ -1,15 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmkbh506oqwaw"]
+[gd_scene load_steps=5 format=3 uid="uid://d1sfemtoemjk5"]
 
 [ext_resource type="Script" path="res://test_player.gd" id="1_1lfhm"]
 [ext_resource type="Texture2D" uid="uid://dq0cbrc2ics3c" path="res://assets/Our/AthenaOwl/athena_owl.png" id="2_wknr1"]
-[ext_resource type="Texture2D" uid="uid://dohx56mevgb5i" path="res://assets/Our/AthenaOwl/athena_owl_flag.png" id="3_4gqna"]
-[ext_resource type="Script" path="res://test_player_2.gd" id="3_mqrdn"]
+[ext_resource type="PackedScene" uid="uid://cug383a2rt8i7" path="res://temples/Sumo Test/test_enemy.tscn" id="3_3fptk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a5i4"]
 size = Vector2(22, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6gsu"]
-size = Vector2(21, 20)
 
 [node name="SumoTest" type="Node2D"]
 
@@ -24,17 +20,7 @@ texture = ExtResource("2_wknr1")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_1a5i4")
 
-[node name="TestEnemy" type="RigidBody2D" parent="."]
-position = Vector2(80, -1)
-gravity_scale = 0.0
-script = ExtResource("3_mqrdn")
-
-[node name="Sprite2D" type="Sprite2D" parent="TestEnemy"]
-texture = ExtResource("3_4gqna")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestEnemy"]
-position = Vector2(-0.5, 4)
-shape = SubResource("RectangleShape2D_i6gsu")
+[node name="TestEnemy" parent="." instance=ExtResource("3_3fptk")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bs3m2epdas81e"]
+[gd_scene load_steps=40 format=4 uid="uid://bs3m2epdas81e"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_btjsw"]
 [ext_resource type="Script" path="res://game/overworld.gd" id="1_tryir"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://c6nwbdll3imwa" path="res://npc/wise_oldie/wise_oldie.tscn" id="18_34vdf"]
 [ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/Pause.tscn" id="18_ie0h8"]
 [ext_resource type="PackedScene" uid="uid://b56y3s3ebrs7a" path="res://npc/chicken/chicken.tscn" id="19_itoky"]
+[ext_resource type="PackedScene" uid="uid://nuqpxpre0vq8" path="res://transition_scene/transition_scene.tscn" id="20_hhh8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_btjsw")
@@ -4619,6 +4620,9 @@ script = ExtResource("11_ecvuo")
 [node name="ZeusTempleDoor" parent="Doors" instance=ExtResource("9_52emi")]
 position = Vector2(328, 96)
 script = ExtResource("16_362q8")
+
+[node name="TransitionScene" parent="Doors" instance=ExtResource("20_hhh8q")]
+visible = false
 
 [node name="WiseOldie" parent="." instance=ExtResource("18_34vdf")]
 position = Vector2(-42, -8)

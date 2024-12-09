@@ -21,8 +21,10 @@ func _on_interact():
 		open = !open
 		interaction_area.action_name = "close"
 		await sprite.animation_finished
+		transition_scene.visible = true
 		transition_scene.transition()
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(1.25).timeout
+		transition_scene.visible = false
 		get_tree().change_scene_to_file("res://temples/temple1.tscn")
 	
 

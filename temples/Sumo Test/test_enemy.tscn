@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cug383a2rt8i7"]
+
+[ext_resource type="Script" path="res://test_player_2.gd" id="1_r8wia"]
+[ext_resource type="Texture2D" uid="uid://dohx56mevgb5i" path="res://assets/Our/AthenaOwl/athena_owl_flag.png" id="2_0hty0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6gsu"]
+size = Vector2(21, 20)
+
+[node name="Enemy" type="RigidBody2D"]
+position = Vector2(80, -1)
+gravity_scale = 0.0
+script = ExtResource("1_r8wia")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(0.5, 1)
+scale = Vector2(0.96875, 1)
+texture = ExtResource("2_0hty0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 4)
+shape = SubResource("RectangleShape2D_i6gsu")

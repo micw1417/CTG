@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://yn706lmj8bkv"]
+[gd_scene load_steps=41 format=4 uid="uid://yn706lmj8bkv"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_tmjm0"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="2_1sanx"]
@@ -12,7 +12,9 @@
 [ext_resource type="FontFile" uid="uid://dih6a1cra53ey" path="res://assets/Brackey's Assets/fonts/PixelOperator8-Bold.ttf" id="8_spe4b"]
 [ext_resource type="Script" path="res://temples/insult_word_control.gd" id="10_k3usk"]
 [ext_resource type="PackedScene" uid="uid://c5soj8x21hiis" path="res://npc/zeus/zeus.tscn" id="11_hghsr"]
+[ext_resource type="Texture2D" uid="uid://ct2wvnfcu4n8u" path="res://text box/dialog.png" id="11_roiak"]
 [ext_resource type="Script" path="res://npc/zeus/zeus.gd" id="12_es3gm"]
+[ext_resource type="PackedScene" uid="uid://nuqpxpre0vq8" path="res://transition_scene/transition_scene.tscn" id="14_0o274"]
 [ext_resource type="AudioStream" uid="uid://cidxfg1w2fc3q" path="res://assets/SFX/LightningSFX/lightning-237994.mp3" id="14_tf1s6"]
 [ext_resource type="Texture2D" uid="uid://bkirllikhngpf" path="res://assets/Our/LightlingAnimation/lightling_animation_extra.png" id="15_tgutr"]
 
@@ -3664,8 +3666,12 @@ texture = ExtResource("6_j0dg3")
 sources/1 = SubResource("TileSetAtlasSource_6lxg3")
 sources/2 = SubResource("TileSetAtlasSource_061uu")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8fq6"]
+texture = ExtResource("11_roiak")
+modulate_color = Color(0.266667, 0.756863, 1, 0.552941)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_esyvr"]
-size = Vector2(20, 36)
+size = Vector2(6, 30.5)
 
 [sub_resource type="Animation" id="Animation_e0kcq"]
 length = 0.001
@@ -3911,6 +3917,7 @@ anchor_right = 1.08068
 anchor_bottom = 1.13618
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_t8fq6")
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Poseidon/InsultWordPicker/InsultWordControl/Panel"]
@@ -4033,8 +4040,11 @@ position = Vector2(242, 22)
 script = ExtResource("12_es3gm")
 
 [node name="CollisionShape2D" parent="Zeus/InteractionArea" index="0"]
-position = Vector2(0, 5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_esyvr")
+
+[node name="TransitionScene" parent="Zeus" instance=ExtResource("14_0o274")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Zeus"]
 root_node = NodePath("../..")
@@ -4044,7 +4054,7 @@ libraries = {
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Zeus"]
 visible = false
-position = Vector2(-7, -55)
+position = Vector2(-6, -38)
 sprite_frames = SubResource("SpriteFrames_wv4qr")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="Zeus"]

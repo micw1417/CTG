@@ -6,6 +6,7 @@ extends RigidBody2D
 @onready var noun_options: OptionButton = $"../Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/NounOptions"
 @onready var title_options: OptionButton = $"../Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/TitleOptions"
 @onready var verb_options: OptionButton = $"../Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer2/VerbOptions"
+@onready var transition_scene: CanvasLayer = $TransitionScene
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -31,6 +32,10 @@ func _on_interact():
 	await DialogManager.dialog_finished
 	
 	if StateManager.chooeseInsult == true:
+		transition_scene.transition()
+		transition_scene.visible = true
+		await get_tree().create_timer(1.75).timeout
+		transition_scene.visible = false
 		animation_player.play('zeus_smite')
 		
 func get_lines() -> Array[String]:

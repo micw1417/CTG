@@ -44,12 +44,11 @@ metadata/_edit_lock_ = true
 position = Vector2(20, -78)
 
 [node name="Camera2D" type="Camera2D" parent="Dude"]
-position = Vector2(-32, 89)
+position = Vector2(-29, -79)
 zoom = Vector2(3.45, 3.45)
 limit_left = -220
 limit_right = 335
-limit_bottom = 170
-metadata/_edit_lock_ = true
+limit_bottom = 190
 
 [node name="Platforms" type="TileMapLayer" parent="."]
 position = Vector2(-8, 173)

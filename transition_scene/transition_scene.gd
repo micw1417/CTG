@@ -4,8 +4,7 @@ signal transitioned
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func _ready() -> void:
-	transition()
+
 	
 func transition():
 	animation_player.play("fade_to_black")

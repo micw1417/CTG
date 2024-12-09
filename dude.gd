@@ -34,8 +34,13 @@ func _physics_process(delta):
 		
 		if not is_on_floor():
 			velocity.y += gravity * delta
-			
+			#if velocity.x > 0:
+				#animated_sprite_2d.play("right_leap")
+			#if velocity.x < 0:
+				#animated_sprite_2d.play("left_leap")
+				#
 		if Input.is_action_pressed("up") and is_on_floor():
+			animated_sprite_2d.play("crouch")
 			accumulated += delta;
 			if accumulated > 1:
 				print("fs")

@@ -37,7 +37,15 @@ func _on_interact():
 		await get_tree().create_timer(1.75).timeout
 		transition_scene.visible = false
 		animation_player.play('zeus_smite')
+		await get_tree().create_timer(5).timeout		
+		transition_scene.transition()
+		transition_scene.visible = true
+		await get_tree().create_timer(.5).timeout
 		
+		transition_scene.visible = false
+		get_tree().change_scene_to_file("res://underworld/underworld.tscn")
+		StateManager.diedUpsidedown = true
+
 func get_lines() -> Array[String]:
 	if StateManager.chooeseInsult == false:
 		return startLines
@@ -45,31 +53,31 @@ func get_lines() -> Array[String]:
 	var noun = noun_options.get_item_text(noun_options.selected)
 
 	if noun == "κόπρος":
-		noun = "κόπρος (Scum)"
+		noun = "κόπρος (SCUM)"
 	elif noun == "κακός":
-		noun = "κακός (Evil Person)"
+		noun = "κακός (EVIL PERSON)"
 	elif noun == "βλάκας":
-		noun = "βλάκας (Idiot)"
+		noun = "βλάκας (IDIOT)"
 	elif noun == "ζώον":
-		noun = "ζώον (Animal/Brute)"
+		noun = "ζώον (ANIMAL/BRUTE)"
 	
 	var title = title_options.get_item_text(title_options.selected)
 
 	if title == "αμάθης":
-		title = "αμάθης (Ignorant)"
+		title = "αμάθης (IGNORANT)"
 	elif title == "βδελυρός":
-		title = "βδελυρός (Hideous)"
+		title = "βδελυρός (HIDEOUS)"
 	elif title == "ματαιόδοξος":
-		title = "ματαιόδοξος (Vain)"
+		title = "ματαιόδοξος (VAIN)"
 	elif title == "ἄσχετος":
-		title = "ἄσχετος (Irrelevant/Incompetent)"
+		title = "ἄσχετος (IRRELEVANT/INCOMPETENT)"
 		
 	var verb = verb_options.get_item_text(verb_options.selected)
 
 	if verb == "βάλλ' εἰς κόρακας":
-		verb = "βάλλ' εἰς κόρακας (Go to H*ll)!!"
+		verb = "βάλλ' εἰς κόρακας (GO TO H*LL)!!"
 	elif verb == "ἐξόλοιο":
-		verb = 'ἐξόλοιο (Drop dead)!!'
+		verb = 'ἐξόλοιο (DROP DEAD)!!'
 	var afterChosenLines: Array[String] = [
 		"Oh you have to present something?",
 		"... WHAT DID YOU JUST SAY TO ME!!",

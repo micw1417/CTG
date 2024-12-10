@@ -30,11 +30,13 @@ scale = Vector2(1.12562, -0.981431)
 shape = SubResource("RectangleShape2D_2y8d3")
 
 [node name="Sprite" parent="." index="1"]
-scale = Vector2(1.5, 1.162)
+position = Vector2(1, -1)
+scale = Vector2(1.3125, 1.081)
 sprite_frames = SubResource("SpriteFrames_3yvmd")
 animation = &"default"
 autoplay = ""
 
 [node name="CollisionShape2D" parent="InteractionArea" index="0"]
+position = Vector2(2, 5.68434e-14)
 scale = Vector2(1.68919, 1.68919)
 shape = SubResource("CapsuleShape2D_mfngl")

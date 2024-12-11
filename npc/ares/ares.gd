@@ -5,6 +5,8 @@ extends RigidBody2D
 @onready var main : CharacterBody2D = $"../main_chrachter2"
 var speed = 50
 @onready var main_chrachter_2: CharacterBody2D = $"../main_chrachter2"
+@onready var player_score: Label = $"../HUD/PlayerScore"
+@onready var ares_score: Label = $"../HUD/AresScore"
 
 var lines: Array[String] = [
 	"Welcome to my temple.",
@@ -28,7 +30,6 @@ func _ready() -> void:
 	
 func _on_interact():
 	if StateManager.isFightingAres == true:
-		InteractionManager.visible = false
 		return
 		
 	interaction_area.visible = true
@@ -38,5 +39,12 @@ func _on_interact():
 	position = Vector2(200, -67)
 	main_chrachter_2.position = Vector2(100, -67)
 	StateManager.isFightingAres = true
+	InteractionManager.visible = false
+	player_score.visible = true
+	ares_score.visible = true
 	
+func _on_collision_polygon_2d_child_exiting_tree(node: Node) -> void:
+	var prev_value = int(player_score.chr(-1))
+	prev_value += 1
 	
+	player_score.text[-1] = prev_value

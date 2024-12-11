@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bpi7fcddm2hel"]
+[gd_scene load_steps=25 format=4 uid="uid://bpi7fcddm2hel"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_ip4f7"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="2_wcyy2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://npc/ares/ares.gd" id="9_cj1vm"]
 [ext_resource type="Script" path="res://temples/temple 2/border_signal.gd" id="9_ckk2f"]
 [ext_resource type="Script" path="res://temples/temple 2/collision_polygon_2d.gd" id="10_soxe7"]
+[ext_resource type="FontFile" uid="uid://dih6a1cra53ey" path="res://assets/Brackey's Assets/fonts/PixelOperator8-Bold.ttf" id="11_jntax"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxrlj"]
 texture = ExtResource("1_ip4f7")
@@ -8513,19 +8514,6 @@ sources/0 = SubResource("TileSetAtlasSource_ntgoe")
 
 [node name="Game" type="Node"]
 
-[node name="HUD" type="Node" parent="."]
-unique_name_in_owner = true
-
-[node name="helpText" type="Label" parent="HUD"]
-visible = false
-offset_left = -132.0
-offset_top = -57.0
-offset_right = 2.0
-offset_bottom = -45.0
-theme_override_font_sizes/font_size = 8
-text = "Current Objective: Talk to Chicken!"
-metadata/_edit_use_anchors_ = true
-
 [node name="Pause" parent="." instance=ExtResource("6_aitiy")]
 
 [node name="floor" type="TileMapLayer" parent="."]
@@ -8539,7 +8527,7 @@ tile_map_data = PackedByteArray("AAAUAAAAAAApAAYAAAAUAAEAAAArAAcAAAAUAAIAAAArAAg
 tile_set = SubResource("TileSet_1k1cl")
 
 [node name="main_chrachter2" parent="." instance=ExtResource("5_7j3oj")]
-position = Vector2(347, 7)
+position = Vector2(-49, -77)
 
 [node name="Camera2D" type="Camera2D" parent="main_chrachter2"]
 position = Vector2(0, 1)
@@ -8559,12 +8547,37 @@ tile_map_data = PackedByteArray("AAAHAAEAAAAaAAcAAAAHAPf/AAAaAAcAAAAIAPf/AAAbAAc
 tile_set = SubResource("TileSet_2eh6a")
 script = ExtResource("9_ckk2f")
 
+[node name="HUD" type="Node" parent="."]
+
+[node name="PlayerScore" type="Label" parent="HUD"]
+visible = false
+offset_left = -76.0
+offset_top = -189.0
+offset_right = 80.0
+offset_bottom = -173.0
+theme_override_fonts/font = ExtResource("11_jntax")
+theme_override_font_sizes/font_size = 16
+text = "Player won: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="AresScore" type="Label" parent="HUD"]
+visible = false
+offset_left = -77.0
+offset_top = -171.0
+offset_right = 93.0
+offset_bottom = -155.0
+theme_override_fonts/font = ExtResource("11_jntax")
+theme_override_font_sizes/font_size = 16
+text = "Ares Won:0"
+metadata/_edit_use_anchors_ = true
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-position = Vector2(27, -13)
-polygon = PackedVector2Array(94, -167, 153, -167, 232, -87, 232, -28, 152, 53, 96, 52, 14, -30, 13, -86)
+position = Vector2(23.6475, -7.95738)
+polygon = PackedVector2Array(96.3525, -173.043, 151.352, -170.043, 236.352, -87.0426, 232, -28, 152, 53, 96, 52, 14, -30, 13, -86)
 script = ExtResource("10_soxe7")
 
 [connection signal="child_exiting_tree" from="Area2D/CollisionPolygon2D" to="main_chrachter2" method="_on_collision_polygon_2d_child_exiting_tree"]
+[connection signal="child_exiting_tree" from="Area2D/CollisionPolygon2D" to="Ares" method="_on_collision_polygon_2d_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Area2D/CollisionPolygon2D" to="Border Signal" method="_on_collision_polygon_2d_child_exiting_tree"]

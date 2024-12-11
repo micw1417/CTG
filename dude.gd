@@ -3,22 +3,26 @@ extends CharacterBody2D
 
 var loop_active = false
 var speed = 100  # speed in pixels/sec
-const JUMP_VELOCITY = -600
+const JUMP_VELOCITY = -650
 
 var accumulated = 0;
 const START_ANGLE = 5
 const END_ANGLE = 60;
 
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d: AnimatedSprite2D = $Sprite
+@onready var random_sfx_jump: AudioStreamPlayer = $"../RandomSFXJump"
+
+@onready var player_score: Label = $"../HUD/PlayerScore"
+@onready var ares_score: Label = $"../HUD/AresScore"
 	
 func _physics_process(delta):
 	if DialogManager.is_dialog_active:
 		return
 	
 	if StateManager.diedUpsidedown:
-
 		var direction = Input.get_axis("left", "right")
 		if is_on_floor():
 			if direction:
@@ -26,15 +30,23 @@ func _physics_process(delta):
 					animated_sprite_2d.play("right")
 				elif direction < 0:
 					animated_sprite_2d.play("left")
-				else:
-					animated_sprite_2d.play("idle")
+					
 				velocity.x = direction * speed
 			else:
 				velocity.x = move_toward(velocity.x, 0, speed)
+				animated_sprite_2d.play("idle")
 		else:
 			velocity.x *= 1 - 0.01 * delta
 		
 		if not is_on_floor():
+			var space_state = get_world_2d().direct_space_state
+			var query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x + (-10 if velocity.x < 0 else 10), position.y-10))
+			query.exclude = [self]
+			var result = space_state.intersect_ray(query)
+			
+			if result:
+				velocity.x = -velocity.x * .9
+				
 			velocity.y += gravity * delta
 			#if velocity.x > 0:
 				#animated_sprite_2d.play("right_leap")
@@ -45,7 +57,6 @@ func _physics_process(delta):
 			animated_sprite_2d.play("crouch")
 			accumulated += delta;
 			if accumulated > 1:
-				print("fs")
 				Input.action_release("up")
 			return
 			
@@ -60,6 +71,7 @@ func _physics_process(delta):
 				velocity.y = JUMP_VELOCITY * accumulated
 			accumulated = 0
 			
+			random_sfx_jump.play()
 	else:
 		var direction = Input.get_vector("left", "right", "up", "down")
 		velocity = direction * speed
@@ -98,4 +110,8 @@ func smoothstep(edge0: float, edge1: float, x: float) -> float:
 
 
 func _on_collision_polygon_2d_child_exiting_tree(node: Node) -> void:
-	print("DUDE LEFT")
+	var prev_value = int(ares_score.chr(-1))
+	prev_value += 1
+	
+	ares_score.text[-1] = prev_value
+	print("DUDE EXITED")

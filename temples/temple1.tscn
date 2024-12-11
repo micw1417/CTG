@@ -3397,11 +3397,14 @@ tile_map_data = PackedByteArray("AAADAPX/CgAHAAIAAGADAPb/CgAHAAIAAGADAPf/CgAHAAI
 tile_set = SubResource("TileSet_0gb68")
 
 [node name="Dude" parent="." instance=ExtResource("5_3aixa")]
-position = Vector2(64, -111)
+position = Vector2(326, 113)
 
 [node name="Camera2D" type="Camera2D" parent="Dude"]
-position = Vector2(23, -8)
 zoom = Vector2(8, 8)
+limit_left = -225
+limit_top = -192
+limit_right = 350
+limit_bottom = 145
 
 [node name="HUD" type="Node" parent="."]
 unique_name_in_owner = true

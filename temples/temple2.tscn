@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bpi7fcddm2hel"]
+[gd_scene load_steps=24 format=4 uid="uid://bpi7fcddm2hel"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_ip4f7"]
 [ext_resource type="Texture2D" uid="uid://djxxaw2lhgg3r" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="2_wcyy2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0lfj2jc1n0jy" path="res://pause/Pause.tscn" id="6_aitiy"]
 [ext_resource type="Texture2D" uid="uid://bna4ooa20guf7" path="res://assets/ancient_greeks_tileset/tileset_16px/buildingsDesaturated-removebg (1).png" id="6_rp2l6"]
 [ext_resource type="PackedScene" uid="uid://cv3r26xy7w0e8" path="res://npc/ares/ares.tscn" id="7_s72ev"]
+[ext_resource type="Script" path="res://npc/ares/ares.gd" id="9_cj1vm"]
 [ext_resource type="Script" path="res://temples/temple 2/border_signal.gd" id="9_ckk2f"]
 [ext_resource type="Script" path="res://temples/temple 2/collision_polygon_2d.gd" id="10_soxe7"]
 
@@ -8536,14 +8537,15 @@ tile_map_data = PackedByteArray("AAAUAAAAAAApAAYAAAAUAAEAAAArAAcAAAAUAAIAAAArAAg
 tile_set = SubResource("TileSet_1k1cl")
 
 [node name="main_chrachter2" parent="." instance=ExtResource("5_7j3oj")]
-position = Vector2(66, -62)
+position = Vector2(-53, -61)
 
 [node name="Camera2D" type="Camera2D" parent="main_chrachter2"]
 position = Vector2(23, -8)
 zoom = Vector2(4, 4)
 
 [node name="Ares" parent="." instance=ExtResource("7_s72ev")]
-position = Vector2(169, -59)
+position = Vector2(266, -65)
+script = ExtResource("9_cj1vm")
 
 [node name="Border Signal" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAHAAEAAAAaAAcAAAAHAPf/AAAaAAcAAAAIAPf/AAAbAAcAAAAGAPf/AAAZAAcAAAAJAPj/AAAaAAcAAAAKAPn/AAAbAAcAAAALAPr/AAAaAAcAAFAMAPv/AAAZAAcAAFAMAPz/AAAaAAcAAFAMAP3/AAAbAAcAAFALAP7/AAAdAAcAAFAKAP//AAAYAAcAAGAJAAAAAAAaAAcAAFAIAAEAAAAbAAcAAAAGAAEAAAAZAAcAAAAFAAAAAAAaAAcAAFAEAP//AAAcAAcAAFADAP7/AAAaAAcAAFACAP3/AAAZAAcAAGADAPr/AAAXAAcAAFACAPz/AAAaAAcAAGACAPv/AAAbAAcAAGAFAPj/AAAcAAcAAAAEAPn/AAAbAAcAAGA=")

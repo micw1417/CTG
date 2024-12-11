@@ -9604,7 +9604,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_7aa1e"]
 resource_name = "zeus_smite"
-length = 9.0
+length = 5.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

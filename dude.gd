@@ -24,8 +24,10 @@ func _physics_process(delta):
 			if direction:
 				if direction > 0:
 					animated_sprite_2d.play("right")
-				else:
+				elif direction < 0:
 					animated_sprite_2d.play("left")
+				else:
+					animated_sprite_2d.play("idle")
 				velocity.x = direction * speed
 			else:
 				velocity.x = move_toward(velocity.x, 0, speed)

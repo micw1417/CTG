@@ -72,7 +72,12 @@ func _physics_process(delta):
 		if velocity == Vector2.ZERO:
 			animated_sprite_2d.stop()
 	
+	
+	
 	move_and_slide()
+	
+	
+	
 	
 func smoothstep(edge0: float, edge1: float, x: float) -> float:
 	# Clamp x to the range [0, 1]
@@ -88,3 +93,7 @@ func smoothstep(edge0: float, edge1: float, x: float) -> float:
 		#rotation += 1 * delta
 	
 	
+
+
+func _on_collision_polygon_2d_child_exiting_tree(node: Node) -> void:
+	print("DUDE LEFT")

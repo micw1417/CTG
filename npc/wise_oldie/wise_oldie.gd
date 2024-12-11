@@ -6,21 +6,21 @@ extends RigidBody2D
 
 
 var startLines: Array[String] = [
-	"*EHEHEM*",
 	"You seem to be a bit lost young lad",
-	"If you want to find you way back, follow the left path"
+	"If you want to find you way back, you must gain the favor of the gods",
+	"Head left to gain Athena's Wisdom"
 ]
 
 var temple1Lines: Array[String] = [
-	"finsiehd 1"
+	"Head right to gain the courage of Ares"
 ]
 
 var temple2Lines: Array[String] = [
-	"finished 2"
+	"Finally head south to win the favor of Zeus and Posidion"
 ]
 
 var temple3Lines: Array[String] = [
-	"templ45s"
+	"Head to the next temple"
 ]
 func _process(delta: float) -> void:
 	pass

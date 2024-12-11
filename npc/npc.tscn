@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://npc/npc.gd" id="1_vbopa"]
 [ext_resource type="PackedScene" uid="uid://b0xw5fdjot6a3" path="res://interaction/interaction area/interaction_area.tscn" id="3_s42wx"]
 
-[node name="NPC" type="RigidBody2D"]
+[node name="FunnyNPC" type="RigidBody2D"]
 gravity_scale = 0.0
 script = ExtResource("1_vbopa")
 

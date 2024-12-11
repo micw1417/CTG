@@ -4,7 +4,7 @@ extends RigidBody2D
 @onready var sprite: AnimatedSprite2D = $Sprite
 
 var lines: Array[String] = [
-	"Congratulations",
+	"Congratulations, continue on your journey",
 ]
 func _process(delta: float) -> void:
 	pass

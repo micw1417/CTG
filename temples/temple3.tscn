@@ -9782,6 +9782,7 @@ position = Vector2(186, 196)
 
 [node name="InsultWordPicker" type="CanvasLayer" parent="Poseidon"]
 unique_name_in_owner = true
+visible = false
 
 [node name="InsultWordControl" type="Control" parent="Poseidon/InsultWordPicker"]
 layout_mode = 3
@@ -9800,10 +9801,10 @@ script = ExtResource("10_k3usk")
 [node name="Panel" type="Panel" parent="Poseidon/InsultWordPicker/InsultWordControl"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0806824
-anchor_top = 0.136176
-anchor_right = 1.08068
-anchor_bottom = 1.13618
+anchor_left = 0.0861524
+anchor_top = 0.831861
+anchor_right = 1.08615
+anchor_bottom = 1.83186
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_t8fq6")

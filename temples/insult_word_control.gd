@@ -4,6 +4,7 @@ extends Control
 @onready var title_options: OptionButton = $Panel/MarginContainer/VBoxContainer/HBoxContainer/TitleOptions
 @onready var verb_options: OptionButton = $Panel/MarginContainer/VBoxContainer/HBoxContainer2/VerbOptions
 @onready var exit_button: Button = $Panel/MarginContainer/VBoxContainer/ExitButton
+@onready var pause: CanvasLayer = $"../../../Pause"
 
 static var noun_value := ""
 static var title_value := ""
@@ -23,4 +24,10 @@ func _on_verb_options_item_selected(index: int) -> void:
 	verb_value = verb_options.get_item_text(verb_options.selected)
 	if noun_value and title_value and verb_value:
 		exit_button.visible = true;
+		
+func _process(delta: float) -> void:
+	if pause.visible:
+		visible = false
+	if pause.visible and StateManager.isInWordPicker:
+		visible = true
 	

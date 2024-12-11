@@ -40,12 +40,12 @@ func _physics_process(delta):
 		
 		if not is_on_floor():
 			var space_state = get_world_2d().direct_space_state
-			var query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x + (-10 if velocity.x < 0 else 10), position.y-10))
+			var query = PhysicsRayQueryParameters2D.create(position, Vector2(position.x + (-10 if velocity.x < 0 else 10), position.y+12))
 			query.exclude = [self]
 			var result = space_state.intersect_ray(query)
 			
 			if result:
-				velocity.x = -velocity.x * .9
+				velocity.x = -velocity.x * .8
 				
 			velocity.y += gravity * delta
 			#if velocity.x > 0:

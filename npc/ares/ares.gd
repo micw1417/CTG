@@ -35,8 +35,8 @@ func _on_interact():
 	
 	DialogManager.start_dialog(global_position, lines)
 	await DialogManager.dialog_finished
-	position = Vector2(169, -65)
-	main_chrachter_2.position = Vector2(130, -65)
+	position = Vector2(200, -67)
+	main_chrachter_2.position = Vector2(100, -67)
 	StateManager.isFightingAres = true
 	
 	

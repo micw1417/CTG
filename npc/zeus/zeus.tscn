@@ -33,7 +33,6 @@ shape = SubResource("RectangleShape2D_ff50y")
 [node name="Sprite" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_g7ved")
 animation = &"idle"
-autoplay = ""
 frame_progress = 0.694397
 
 [node name="CollisionShape2D" parent="InteractionArea" index="0"]

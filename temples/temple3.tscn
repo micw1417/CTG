@@ -9988,10 +9988,9 @@ position = Vector2(-34, 5)
 position = Vector2(-34, 5)
 
 [node name="InteractionArea" parent="Zeus" index="2"]
-position = Vector2(6, 11)
+position = Vector2(-34, 7)
 
 [node name="CollisionShape2D" parent="Zeus/InteractionArea" index="0"]
-position = Vector2(-40, -4)
 shape = SubResource("RectangleShape2D_esyvr")
 
 [node name="TransitionScene" parent="Zeus" instance=ExtResource("14_0o274")]

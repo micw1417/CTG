@@ -2,8 +2,7 @@ extends RigidBody2D
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite: AnimatedSprite2D = $Sprite
-@onready var main : CharacterBody2D = $"../main_chrachter2"
-var speed = 50
+
 
 var lines: Array[String] = [
 	"What happens when you tell an egg a joke",
@@ -17,14 +16,14 @@ func _physics_process(delta):
 	
 	pass
 
+	"HI EXAMPLEING"
 func _process(delta: float) -> void:
 	pass
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
 	sprite.play("new_animation")
+	#sprite.play("idle")
 func _on_interact():
 	DialogManager.start_dialog(global_position, lines)
-	
-	
-	
+	await DialogManager.dialog_finished

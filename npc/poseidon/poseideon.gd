@@ -8,7 +8,7 @@ extends RigidBody2D
 
 
 var startLines: Array[String] = [
-	"Welcome to my temple",
+	"Hello traveler.",
 	"I need you to... help make an apology",
 	"Hermes told me you could help make it",
 	"Talk to me again when you finish",
@@ -34,6 +34,7 @@ func _on_interact():
 	await DialogManager.dialog_finished
 	if (StateManager.chooeseInsult != true):
 		insult_word_picker.visible = true
+		StateManager.isInWordPicker = true
 		dude.process_mode = Node.PROCESS_MODE_DISABLED
 
 
@@ -41,6 +42,7 @@ func _on_exit_button_pressed() -> void:
 	insult_word_picker.visible = false
 	StateManager.chooeseInsult = true
 	dude.process_mode = Node.PROCESS_MODE_INHERIT
+	StateManager.isInWordPicker = false
 	
 func get_lines() -> Array[String]:
 	if StateManager.chooeseInsult == true:

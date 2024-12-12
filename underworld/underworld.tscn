@@ -494,7 +494,8 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wc14c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t15rp"]
+size = Vector2(544, 56)
 
 [node name="Underworld" type="Node2D"]
 
@@ -504,13 +505,13 @@ scale = Vector2(1.23, 1.5)
 texture = ExtResource("1_puug1")
 
 [node name="Dude" parent="." instance=ExtResource("1_b00lx")]
-position = Vector2(-17, -72)
+position = Vector2(224, -1248)
 
 [node name="Camera2D" type="Camera2D" parent="Dude"]
 position = Vector2(-1, 1)
 zoom = Vector2(3.45, 3.45)
 limit_left = -220
-limit_top = -1390
+limit_top = -1360
 limit_right = 335
 limit_bottom = 190
 
@@ -545,6 +546,9 @@ stream = SubResource("AudioStreamRandomizer_bqi6n")
 script = ExtResource("10_k5x13")
 
 [node name="Portal" type="Area2D" parent="."]
+position = Vector2(-24, 4)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Portal"]
 position = Vector2(64, -1344)
@@ -554,7 +558,7 @@ autoplay = "default"
 frame_progress = 0.841679
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-position = Vector2(32, -1344)
-shape = SubResource("WorldBoundaryShape2D_wc14c")
+position = Vector2(80, -1352)
+shape = SubResource("RectangleShape2D_t15rp")
 
 [connection signal="area_entered" from="Portal" to="Dude" method="_on_portal_area_entered"]

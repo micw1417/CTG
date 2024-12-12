@@ -12,7 +12,18 @@ var speed = 50
 var lines: Array[String] = [
 	"Welcome to my temple.",
 	"If you want to gain my favor",
-	"Go and battle me..."
+	"Go and battle me...",
+	"Last 15 seconds in this sumo ring"
+]
+var lostLines: Array[String] = [
+	"Ha ha, you lost",
+	"Try again"
+]
+
+var winLines: Array[String] = [
+	"Congratualtions!",
+	"You passed the trial",
+	"Continue onwards"
 ]
 func _physics_process(delta): 
 	if StateManager.isFightingAres:
@@ -52,12 +63,22 @@ func _on_collision_polygon_2d_child_exiting_tree(node: Node) -> void:
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	StateManager.isFightingAres == true
 	position = Vector2(200, -67)
-	main_chrachter_2.position = Vector2(100, -67)
+	main_chrachter_2.position = Vector2(180, -67)
+	StateManager.isFightingAres = false
+	
+	DialogManager.start_dialog(global_position, lostLines)
+	
+	await DialogManager.dialog_finished
 	timer.stop()
 	timer.start()
+	StateManager.isFightingAres = true
 
 
 func _on_timer_timeout() -> void:
+	StateManager.isFightingAres = false
+	await get_tree().create_timer(1).timeout
+	DialogManager.start_dialog(global_position, winLines)
+	await DialogManager.dialog_finished 
+	
 	get_tree().change_scene_to_file("res://game/overworld.tscn")

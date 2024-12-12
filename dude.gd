@@ -118,4 +118,5 @@ func _on_collision_polygon_2d_child_exiting_tree(node: Node) -> void:
 
 
 func _on_portal_area_entered(area: Area2D) -> void:
+	print('FSFSfs')
 	get_tree().change_scene_to_file("res://credits.tscn")

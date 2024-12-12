@@ -4,7 +4,8 @@ extends RigidBody2D
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var main : CharacterBody2D = $"../main_chrachter2"
-var speed = 50
+var speed = 65
+
 @onready var main_chrachter_2: CharacterBody2D = $"../main_chrachter2"
 @onready var player_score: Label = $"../HUD/PlayerScore"
 @onready var ares_score: Label = $"../HUD/AresScore"
@@ -47,7 +48,7 @@ func _on_interact():
 		
 	interaction_area.visible = true
 	
-	DialogManager.start_dialog(global_position, lines)
+	DialogManager.start_dialog(position, lines)
 	await DialogManager.dialog_finished
 	position = Vector2(200, -67)
 	main_chrachter_2.position = Vector2(100, -67)
@@ -67,7 +68,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	main_chrachter_2.position = Vector2(180, -67)
 	StateManager.isFightingAres = false
 	
-	DialogManager.start_dialog(global_position, lostLines)
+	DialogManager.start_dialog(position, lostLines)
 	
 	await DialogManager.dialog_finished
 	timer.stop()
@@ -77,8 +78,17 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	StateManager.isFightingAres = false
-	await get_tree().create_timer(1).timeout
-	DialogManager.start_dialog(global_position, winLines)
+	#self.linear_velocity = Vector2(0, 0)
+	await get_tree().create_timer(2).timeout
+	DialogManager.start_dialog(position, winLines)
 	await DialogManager.dialog_finished 
 	
 	get_tree().change_scene_to_file("res://game/overworld.tscn")
+
+
+func _on_main_chrachter_2_player_lost() -> void:
+	StateManager.isFightingAres = false
+	#self.linear_velocity = Vector2(0, 0)
+	await get_tree().create_timer(2).timeout
+	DialogManager.start_dialog(position, winLines)
+	await DialogManager.dialog_finished 

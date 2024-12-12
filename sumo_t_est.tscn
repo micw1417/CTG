@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjvpxsbiikvb4"]
+
+[ext_resource type="Script" path="res://test_player.gd" id="1_1lfhm"]
+[ext_resource type="Texture2D" uid="uid://dq0cbrc2ics3c" path="res://assets/Our/AthenaOwl/athena_owl.png" id="2_wknr1"]
+[ext_resource type="PackedScene" uid="uid://cug383a2rt8i7" path="res://temples/Sumo Test/test_enemy.tscn" id="3_3fptk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1a5i4"]
+size = Vector2(22, 20)
+
+[node name="SumoTest" type="Node2D"]
+
+[node name="TestPlayer" type="RigidBody2D" parent="."]
+gravity_scale = 0.0
+script = ExtResource("1_1lfhm")
+
+[node name="Sprite2D" type="Sprite2D" parent="TestPlayer"]
+texture = ExtResource("2_wknr1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestPlayer"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_1a5i4")
+
+[node name="TestEnemy" parent="." instance=ExtResource("3_3fptk")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)

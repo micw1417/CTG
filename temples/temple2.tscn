@@ -8566,8 +8566,9 @@ polygon = PackedVector2Array(98, -142, 142, -143, 208, -78, 209, -36, 143, 28, 9
 script = ExtResource("10_soxe7")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 13.0
 
+[connection signal="player_lost" from="main_chrachter2" to="Ares" method="_on_main_chrachter_2_player_lost"]
 [connection signal="area_entered" from="Area2D" to="main_chrachter2" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D/CollisionPolygon2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="main_chrachter2" method="_on_area_2d_body_exited"]

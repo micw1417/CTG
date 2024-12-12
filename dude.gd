@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -650
 var accumulated = 0;
 const START_ANGLE = 5
 const END_ANGLE = 60;
+signal player_lost
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
@@ -120,3 +121,7 @@ func _on_collision_polygon_2d_child_exiting_tree(node: Node) -> void:
 func _on_portal_body_entered(body: Node2D) -> void:
 	print('FSFSfs')
 	get_tree().change_scene_to_file("res://credits.tscn")
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	emit_signal("player_lost")

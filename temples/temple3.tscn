@@ -10013,11 +10013,14 @@ sprite_frames = SubResource("SpriteFrames_wv4qr")
 position = Vector2(0, 1)
 
 [node name="Dude" parent="." instance=ExtResource("5_f28l1")]
-position = Vector2(241, 187)
+position = Vector2(238, 221)
 
 [node name="Camera2D" type="Camera2D" parent="Dude"]
-position = Vector2(-121, -16)
 zoom = Vector2(4, 4)
+limit_left = -20
+limit_top = -45
+limit_right = 500
+limit_bottom = 255
 
 [connection signal="item_selected" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/NounOptions" to="Poseidon/InsultWordPicker/InsultWordControl" method="_on_noun_options_item_selected"]
 [connection signal="item_selected" from="Poseidon/InsultWordPicker/InsultWordControl/Panel/MarginContainer/VBoxContainer/HBoxContainer/TitleOptions" to="Poseidon/InsultWordPicker/InsultWordControl" method="_on_title_options_item_selected"]

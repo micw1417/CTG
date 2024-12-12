@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bs3m2epdas81e"]
+[gd_scene load_steps=40 format=4 uid="uid://bs3m2epdas81e"]
 
 [ext_resource type="Texture2D" uid="uid://b1uth6ikyggcg" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="1_btjsw"]
 [ext_resource type="Script" path="res://game/overworld.gd" id="1_tryir"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://do0himh36oj2h" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="8_mkcvc"]
 [ext_resource type="Texture2D" uid="uid://bna4ooa20guf7" path="res://assets/ancient_greeks_tileset/tileset_16px/buildingsDesaturated-removebg (1).png" id="9_5k3el"]
 [ext_resource type="PackedScene" uid="uid://h28nphwcdau1" path="res://door/Door.tscn" id="9_52emi"]
-[ext_resource type="PackedScene" uid="uid://bqslm5mquxf5b" path="res://npc/hermes/hermes.tscn" id="9_vlnoj"]
 [ext_resource type="AudioStream" uid="uid://bkiu6squtdbcb" path="res://assets/music/Adventure_remaster.mp3" id="10_0sj4v"]
 [ext_resource type="Script" path="res://door/door2.gd" id="11_ecvuo"]
 [ext_resource type="PackedScene" uid="uid://c4n6bibyf6k2q" path="res://main_menu/options/OptionsMenu.tscn" id="12_7nsis"]
@@ -4584,10 +4583,6 @@ zoom = Vector2(4, 4)
 [node name="Chest" parent="." instance=ExtResource("8_lx73m")]
 position = Vector2(105, 262)
 
-[node name="Hermes" parent="." instance=ExtResource("9_vlnoj")]
-position = Vector2(372, 166)
-scale = Vector2(1, 1.00651)
-
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_0sj4v")
 volume_db = -2.0
@@ -4627,4 +4622,4 @@ position = Vector2(-42, -8)
 position = Vector2(-157, 182)
 
 [node name="NPC" parent="." instance=ExtResource("24_pxgte")]
-position = Vector2(-356, 201)
+position = Vector2(-343, 183)

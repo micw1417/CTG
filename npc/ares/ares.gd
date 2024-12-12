@@ -67,7 +67,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	position = Vector2(200, -67)
 	main_chrachter_2.position = Vector2(180, -67)
 	StateManager.isFightingAres = false
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	DialogManager.start_dialog(position, lostLines)
 	await DialogManager.dialog_finished 
 	timer.stop()
@@ -79,10 +79,10 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	StateManager.isFightingAres = false
 	self.linear_velocity = Vector2(0, 0)
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	DialogManager.start_dialog(position, winLines)
 	await DialogManager.dialog_finished 
-	
+	StateManager.finishedTemple2 = true
 	get_tree().change_scene_to_file("res://game/overworld.tscn")
 
 

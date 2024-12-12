@@ -42,7 +42,7 @@ shape = SubResource("CircleShape2D_fc6yv")
 [node name="Sprite" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_rl34b")
 animation = &"default"
-autoplay = ""
+frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="InteractionArea" index="0"]
 shape = SubResource("CircleShape2D_y6cw8")

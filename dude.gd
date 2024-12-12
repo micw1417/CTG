@@ -107,11 +107,3 @@ func smoothstep(edge0: float, edge1: float, x: float) -> float:
 		#rotation += 1 * delta
 	
 	
-
-
-func _on_collision_polygon_2d_child_exiting_tree(node: Node) -> void:
-	var prev_value = int(ares_score.chr(-1))
-	prev_value += 1
-	
-	ares_score.text[-1] = prev_value
-	print("DUDE EXITED")

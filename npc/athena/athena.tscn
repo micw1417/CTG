@@ -34,7 +34,7 @@ position = Vector2(1, -1)
 scale = Vector2(1.3125, 1.081)
 sprite_frames = SubResource("SpriteFrames_3yvmd")
 animation = &"default"
-autoplay = ""
+frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="InteractionArea" index="0"]
 position = Vector2(2, 5.68434e-14)

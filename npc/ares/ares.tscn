@@ -30,7 +30,7 @@ position = Vector2(0.758579, -7.15256e-07)
 scale = Vector2(1.01509, 1)
 sprite_frames = SubResource("SpriteFrames_q5psn")
 animation = &"default"
-autoplay = ""
+frame_progress = 0.0
 
 [node name="InteractionArea" parent="." index="2"]
 position = Vector2(4, 2)

@@ -1,4 +1,5 @@
 extends RigidBody2D
+@onready var timer: Timer = $"../Timer"
 
 @onready var interaction_area: InteractionArea = $InteractionArea
 @onready var sprite: AnimatedSprite2D = $Sprite
@@ -26,7 +27,8 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
-	sprite.play("idle")
+	sprite.play("default")
+	
 	
 func _on_interact():
 	if StateManager.isFightingAres == true:
@@ -40,11 +42,22 @@ func _on_interact():
 	main_chrachter_2.position = Vector2(100, -67)
 	StateManager.isFightingAres = true
 	InteractionManager.visible = false
-	player_score.visible = true
-	ares_score.visible = true
+	timer.start()
+	
+	#player_score.visible = true
+	#ares_score.visible = true
 	
 func _on_collision_polygon_2d_child_exiting_tree(node: Node) -> void:
-	var prev_value = int(player_score.chr(-1))
-	prev_value += 1
-	
-	player_score.text[-1] = prev_value
+	print("go")
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	StateManager.isFightingAres == true
+	position = Vector2(200, -67)
+	main_chrachter_2.position = Vector2(100, -67)
+	timer.stop()
+	timer.start()
+
+
+func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://game/overworld.tscn")

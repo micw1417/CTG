@@ -65,7 +65,7 @@ func _physics_process(delta):
 			if direction != 0:
 				
 				var angle = lerp(START_ANGLE, END_ANGLE, clamp(accumulated * 1.2, 0, 1))
-				velocity.x = cos(deg_to_rad(angle)) * (1 if direction < 0 else -1) * JUMP_VELOCITY * .3
+				velocity.x = cos(deg_to_rad(angle)) * (1 if direction < 0 else -1) * JUMP_VELOCITY * .35
 				velocity.y = sin(deg_to_rad(angle)) * JUMP_VELOCITY
 			else:
 				velocity.y = JUMP_VELOCITY * accumulated
@@ -115,3 +115,7 @@ func _on_collision_polygon_2d_child_exiting_tree(node: Node) -> void:
 	
 	ares_score.text[-1] = prev_value
 	print("DUDE EXITED")
+
+
+func _on_portal_area_entered(area: Area2D) -> void:
+	get_tree().change_scene_to_file("res://credits.tscn")

@@ -3397,7 +3397,7 @@ tile_map_data = PackedByteArray("AAADAPX/CgAHAAIAAGADAPb/CgAHAAIAAGADAPf/CgAHAAI
 tile_set = SubResource("TileSet_0gb68")
 
 [node name="Dude" parent="." instance=ExtResource("5_3aixa")]
-position = Vector2(326, 113)
+position = Vector2(66, -107)
 
 [node name="Camera2D" type="Camera2D" parent="Dude"]
 zoom = Vector2(8, 8)
@@ -3420,7 +3420,7 @@ text = "Current Objective: Talk to Chicken!"
 metadata/_edit_use_anchors_ = true
 
 [node name="Athena_Owl" parent="." instance=ExtResource("6_lv4to")]
-position = Vector2(-194, 113)
+position = Vector2(-149, 112)
 scale = Vector2(0.999148, 1.00172)
 
 [node name="Athena" parent="." instance=ExtResource("7_n51bl")]

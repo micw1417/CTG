@@ -26,7 +26,6 @@ func toggle_paused():
 	else:
 		show()
 		get_tree().paused = true
-
 func reset_menus():
 	margin_container.visible = true
 	options_menu.visible = false

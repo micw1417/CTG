@@ -6,7 +6,7 @@ extends RigidBody2D
 
 
 var lines: Array[String] = [
-	"To gain Wisdon's favor...",
+	"To gain Wisdom's favor...",
 	"find my owl",
 	"Explore this maze...",
 	"Go Venture forth!"

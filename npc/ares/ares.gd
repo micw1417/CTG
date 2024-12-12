@@ -67,18 +67,18 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	position = Vector2(200, -67)
 	main_chrachter_2.position = Vector2(180, -67)
 	StateManager.isFightingAres = false
-	
+	await get_tree().create_timer(2).timeout
 	DialogManager.start_dialog(position, lostLines)
-	
-	await DialogManager.dialog_finished
+	await DialogManager.dialog_finished 
 	timer.stop()
 	timer.start()
+	print(timer.time_left)
 	StateManager.isFightingAres = true
 
 
 func _on_timer_timeout() -> void:
 	StateManager.isFightingAres = false
-	#self.linear_velocity = Vector2(0, 0)
+	self.linear_velocity = Vector2(0, 0)
 	await get_tree().create_timer(2).timeout
 	DialogManager.start_dialog(position, winLines)
 	await DialogManager.dialog_finished 
@@ -88,7 +88,37 @@ func _on_timer_timeout() -> void:
 
 func _on_main_chrachter_2_player_lost() -> void:
 	StateManager.isFightingAres = false
-	#self.linear_velocity = Vector2(0, 0)
+	self.linear_velocity = Vector2(0, 0)
 	await get_tree().create_timer(2).timeout
-	DialogManager.start_dialog(position, winLines)
+	DialogManager.start_dialog(position, lostLines)
 	await DialogManager.dialog_finished 
+	
+##func _on_area_2d_body_exited(body: Node2D) -> void:
+	##position = Vector2(200, -67)
+	#main_chrachter_2.position = Vector2(180, -67)
+	#StateManager.isFightingAres = false
+	#
+	#DialogManager.start_dialog(position, lostLines)
+	#
+	#await DialogManager.dialog_finished
+	#timer.stop()
+	#timer.start()
+	#StateManager.isFightingAres = true
+#
+#
+#func _on_timer_timeout() -> void:
+	#StateManager.isFightingAres = false
+	#self.linear_velocity = Vector2(0, 0)
+	#await get_tree().create_timer(2).timeout
+	#DialogManager.start_dialog(position, winLines)
+	#await DialogManager.dialog_finished 
+	#
+	#get_tree().change_scene_to_file("res://game/overworld.tscn")
+#
+#
+#func _on_main_chrachter_2_player_lost() -> void:
+	#StateManager.isFightingAres = false
+	#self.linear_velocity = Vector2(0, 0)
+	#await get_tree().create_timer(2).timeout
+	#DialogManager.start_dialog(position, winLines)
+	#await DialogManager.dialog_finished 

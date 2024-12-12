@@ -12,11 +12,11 @@ var startLines: Array[String] = [
 ]
 
 var temple1Lines: Array[String] = [
-	"Head right to gain the courage of Ares"
+	"Head right and up to gain the courage of Ares"
 ]
 
 var temple2Lines: Array[String] = [
-	"Finally head south to win the favor of Zeus and Posidion"
+	"Finally head southeast to win the favor of Zeus and Posidion"
 ]
 
 var temple3Lines: Array[String] = [

@@ -46,7 +46,6 @@ func _on_interact():
 	if StateManager.isFightingAres == true:
 		return
 		
-	interaction_area.visible = true
 	
 	DialogManager.start_dialog(position, lines)
 	await DialogManager.dialog_finished
@@ -83,7 +82,10 @@ func _on_timer_timeout() -> void:
 	DialogManager.start_dialog(position, winLines)
 	await DialogManager.dialog_finished 
 	StateManager.finishedTemple2 = true
+	InteractionManager.visible = true
 	get_tree().change_scene_to_file("res://game/overworld.tscn")
+	
+	
 
 
 func _on_main_chrachter_2_player_lost() -> void:
